@@ -1,0 +1,59 @@
+.header{
+    padding-top: 120px;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 1170px;
+    
+}
+.menu{
+  
+background-color: #565655;
+margin-bottom: 250px;
+font-size: 25px;
+
+
+ &__list {
+    display: flex;
+        justify-content: space-around;
+        list-style: none;
+        align-items: center;
+ }
+}
+.logo{
+  
+        width: auto;
+        height: 70PX;
+        src: url("https://cdn.worldvectorlogo.com/logos/devil68-svg.svg");
+      
+}
+.main{
+    text-align: right;
+    &__title{
+      font-size: 48px;
+      width: 550px;
+      transform: translate(619px, 0);
+     margin-bottom: 40px;
+     &-sell{
+      font-size: 53px;
+     
+      width: 300px;
+          position: relative;
+            left: 869px;
+            margin-bottom: 100px
+      
+     }
+     &-pay{
+      color: #ffc901;
+     }
+    }
+    &__text{
+      font-size: 38px;
+      margin-bottom: 100px;
+      &-link{
+        color: #ffc901;
+      }
+    }
+    &__logo{
+      margin-bottom: 210px;
+    }
+}
