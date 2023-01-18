@@ -1,10 +1,16 @@
 import "./App.scss";
 import { Header } from "./components/Header/Header";
+import { About } from "./components/About/About";
+import { Action } from "./components/Action/Action";
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <div className="container">
+        <Header />
+        <About />
+        <Action />
+      </div>
     </div>
   );
 }

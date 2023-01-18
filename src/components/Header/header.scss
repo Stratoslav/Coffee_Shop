@@ -1,22 +1,42 @@
 .header{
-    padding-top: 120px;
-        width: 100%;
-        margin: 0 auto;
-        max-width: 1170px;
-    
+    max-width: 1440px;
+    height: auto;
+      margin: 0 auto;
+      width: 100%;
+  background-position: center;
+       background-image: url('../../img/header/Place\ Your\ Image\ Here\(Double\ Click\ to\ Edit\).png');
+background-repeat:no-repeat;
+background-size: cover;
+
+    &__container{
+   
+      
+        background-position: center;
+          background-image: url("../../img/header/Place\ Your\ Design\ Here\(Double\ Click\ to\ Edit\).png");
+          background-repeat: no-repeat;
+       background-size: contain;
+    }
 }
 .menu{
-  
-background-color: #565655;
-margin-bottom: 250px;
+margin-bottom: 160px;
+
+max-width: 1960px;
+width: 100%;
+
 font-size: 25px;
-
-
+&__logo::before{
+ content: url(../../img/header/logo-min.png);
+}
  &__list {
+
+  max-width: 1170px;
+  margin: 0 auto;
     display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
         list-style: none;
         align-items: center;
+        padding: 90px 0;
  }
 }
 .logo{
@@ -28,6 +48,9 @@ font-size: 25px;
 }
 .main{
     text-align: right;
+    max-width: 1170px;
+      margin: 0 auto;
+      padding-bottom: 100px;
     &__title{
       font-size: 48px;
       width: 550px;
@@ -39,7 +62,7 @@ font-size: 25px;
       width: 300px;
           position: relative;
             left: 869px;
-            margin-bottom: 100px
+           
       
      }
      &-pay{
@@ -55,5 +78,8 @@ font-size: 25px;
     }
     &__logo{
       margin-bottom: 210px;
+      &::before{
+        content: url(../../img/header/logo-min.png);
+      }
     }
 }
