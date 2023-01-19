@@ -1,0 +1,12 @@
+import React from "react";
+import "../Gallery/gallery.scss";
+import s from "../../img/gallery/gallery.png";
+export const GalleryComponent = () => {
+  return (
+    <section className="gallery">
+      <div className="gallery__container">
+        <img className="gallery__img" src={s} alt="" />
+      </div>
+    </section>
+  );
+};
