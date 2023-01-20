@@ -1,5 +1,6 @@
 import React from "react";
 import "../Contacts/contacts.scss";
+import { Footer } from "../Footer/Footer";
 export const Contacts = () => {
   return (
     <section className="contacts">
@@ -15,6 +16,7 @@ export const Contacts = () => {
           Contact us now
         </a>
       </div>
+      <Footer />
     </section>
   );
 };
