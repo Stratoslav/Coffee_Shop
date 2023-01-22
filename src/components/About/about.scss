@@ -1,54 +1,45 @@
-.about{
-    // background-image: url('../../img/header/Place\ Your\ Image\ Here\(Double\ Click\ to\ Edit\).png');
-    //     background-repeat: inherit;
-
-   
-    &__container{
+.about {
+    &__container {
         text-align: center;
-width: 100%;
-
-    margin: 0 auto;
-    // max-width: 1440px;
-    background-image: url(../../img/about/about-back.png) ;
-    height:  auto;
-    background-repeat: no-repeat;
-    background-size: cover;
-    & > div {
-max-width: 600px;
-padding-left: 80px;
-height: auto;
+        width: 100%;
+        margin: 0 auto;
+        background-image: url(../../img/about/about-back.png);
+        height: auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-top: 1px solid #717171;
+        border-bottom: 1px solid #717171;
+        & > div {
+            max-width: 600px;
+            padding-left: 80px;
+            height: auto;
+        }
     }
-    }
-    &__title{
+    &__title {
         padding-top: 25px;
         margin-bottom: 100px;
         font-size: 55px;
-     
         font-weight: 400;
- &::after{
-    padding-left: 10px;
-  
-    content: url(../../img/header/logo-min.png);
-  
-  
- }
+        &::after {
+            padding-left: 10px;
+
+            content: url(../../img/header/logo-min.png);
+        }
     }
-    &__text{
-       
+    &__text {
         width: 100%;
         margin: 0 auto;
         font-size: 21px;
         font-weight: 100;
         margin-bottom: 120px;
-       
     }
-    &__offer{
+    &__offer {
         font-size: 33px;
         font-weight: 100;
-    padding-bottom: 207px;
+        padding-bottom: 207px;
         & > strong {
-          color:#ffc901 ;
-        font-weight: 100;
+            color: #ffc901;
+            font-weight: 100;
         }
     }
 }

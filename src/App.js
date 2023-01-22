@@ -5,12 +5,14 @@ import { Action } from "./components/Action/Action";
 import { GalleryComponent } from "./components/Gallery/GalleryComponent";
 import { Booking } from "./components/Booking/Booking";
 import { Contacts } from "./components/Contacts/Contacts";
+import MainComponent from "./components/Main/Main";
 
 function App() {
   return (
     <div className="App">
+      <Header />
       <div className="container">
-        <Header />
+        <MainComponent />
         <About />
         <Action />
         <GalleryComponent />

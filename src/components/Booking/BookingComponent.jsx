@@ -41,7 +41,7 @@ export const BookingComponent = () => {
   };
 
   return (
-    <section className="booking">
+    <section className="booking" id="booking">
       <div className="booking__container">
         <h3 className="booking__title">BOOK NOW</h3>
         <p className="booking__text">

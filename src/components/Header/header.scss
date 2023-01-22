@@ -1,91 +1,113 @@
-.header{
-
-    height: auto;
-      margin: 0 auto;
-      // width: 100%;
-  background-position: center;
-  //     background-image: url('../../img/header/Place\ Your\ Image\ Here\(Double\ Click\ to\ Edit\).png');
-background-repeat:no-repeat;
-background-size: cover;
-
-    &__container{
-   
-      
-        background-position: center;
-          background-image: url("../../img/header/Place\ Your\ Design\ Here\(Double\ Click\ to\ Edit\).png");
-          background-repeat: no-repeat;
-       background-size: contain;
-    }
-}
-.menu{
-  box-sizing: border-box;
-
-  margin-bottom: 160px;
-max-width: 1960px;
+.header {
   width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  height: auto;
+  z-index: 100;
+  margin: 0 auto;
+  background-color: #333333;
+  border-bottom: 1px solid #717171;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  &__inner-left {
+    margin: 0 20px;
+  }
+}
+.menu {
+  box-sizing: border-box;
+  max-width: 900px;
+  width: 100%;
+  font-size: 20px;
 
-  font-size: 25px;
-  /* width: 100%!important; */
- 
-  /* font-size: 25px; */
-  //transform: translateX(-50%);
-&__logo::before{
- content: url(../../img/header/logo-min.png);
+  &__logo::before {
+    content: url(../../img/header/logo-min.png);
+  }
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    list-style: none;
+    align-items: center;
+    padding: 5px 0;
+  }
 }
- &__list {
-
-  max-width: 1170px;    margin: 0 auto;
-      //transform: translateX(50%);
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      list-style: none;
-      align-items: center;
-      padding: 90px 0;
-     
- }
+.logo {
+  width: auto;
+  height: 70px;
+  src: url("https://cdn.worldvectorlogo.com/logos/devil68-svg.svg");
 }
-.logo{
-  
-        width: auto;
-        height: 70PX;
-        src: url("https://cdn.worldvectorlogo.com/logos/devil68-svg.svg");
-      
-}
-.main{
-    text-align: right;
-    max-width: 1170px;
-      margin: 0 auto;
-      padding-bottom: 100px;
-    &__title{
-      font-size: 48px;
-      width: 550px;
-      transform: translate(619px, 0);
-     margin-bottom: 40px;
-     &-sell{
+.main {
+  text-align: right;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding-bottom: 100px;
+  &__title {
+    padding-top: 160px;
+    margin-top: 95px;
+    font-size: 48px;
+    width: 550px;
+    // transform: translate(619px, 0);
+    margin-bottom: 40px;
+    &-sell {
       font-size: 53px;
-     
       width: 300px;
-          position: relative;
-            left: 869px;
-           
-      
-     }
-     &-pay{
+      text-align: right;
+      position: relative;
+      left: 45%;
+    }
+    &-pay {
       color: #ffc901;
-     }
     }
-    &__text{
-      font-size: 38px;
-      margin-bottom: 100px;
-      &-link{
-        color: #ffc901;
-      }
+  }
+  &__text {
+    font-size: 38px;
+    margin-bottom: 100px;
+    &-link {
+      color: #ffc901;
     }
-    &__logo{
-      margin-bottom: 210px;
-      &::before{
-        content: url(../../img/header/logo-min.png);
-      }
+  }
+  &__logo {
+    margin-bottom: 210px;
+    &::before {
+      content: url(../../img/header/logo-min.png);
     }
+  }
+}
+
+.city,
+.restaurant {
+  padding: 0 20px;
+  &::after {
+    content: url("../../img/header/arrow.png");
+    filter: invert(80%) sepia(41%) saturate(1376%) hue-rotate(353deg) brightness(98%) contrast(108%);
+    position: absolute;
+  }
+}
+.card {
+  padding: 0 15px;
+  margin-left: 30px;
+  &::before {
+    content: url("../../img/header/shopping-basket.png");
+    position: absolute;
+    transform: translate(-35px, 0px);
+    filter: invert(80%) sepia(41%) saturate(1376%) hue-rotate(353deg) brightness(98%) contrast(108%);
+  }
+}
+
+.searchForm {
+  margin: 0 15px;
+  border: 1px solid #ffc901;
+  background-color: inherit;
+  height: 40px;
+  width: 250px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 100;
+  border-radius: 6px;
+  padding: 15px;
+  &::placeholder {
+    color: rgb(136, 136, 136);
+    font-weight: 100;
+  }
 }

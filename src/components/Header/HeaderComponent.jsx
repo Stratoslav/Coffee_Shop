@@ -1,13 +1,47 @@
-import React from "react";
 import "../Header/header.scss";
-const HeaderComponent = () => {
+import "../Main/main.scss";
+import { PopUpCity, PopUpRestaurant } from "./PopUp/PopUp";
+
+const HeaderComponent = ({
+  openToogleModal,
+  modalCity,
+  popUpRestaurant,
+  modalRestaurant,
+}) => {
   return (
-    <header className="header">
-      <div className="header__container">
+    <>
+      <header className="header">
+        <div className="header__inner-left">
+          <span className="city">
+            <a
+              onClick={openToogleModal}
+              className="city__link"
+              href="#f"
+              class="city__js"
+              data-action="open-modal"
+            >
+              Kyiv
+            </a>
+          </span>
+          {modalCity && <PopUpCity />}
+
+          <span className="restaurant">
+            <a
+              className="restaurant__link"
+              onClick={popUpRestaurant}
+              href="#rs"
+              class="restaurant__js"
+              data-action="open-modal"
+            >
+              restaurant
+            </a>
+          </span>
+          {modalRestaurant && <PopUpRestaurant />}
+        </div>
         <menu className="menu">
           <ul className="menu__list">
             <li className="menu__list-item">
-              <a href="#" className="menu__list-link">
+              <a href="#about" className="menu__list-link">
                 About us
               </a>
             </li>
@@ -17,7 +51,7 @@ const HeaderComponent = () => {
               </a>
             </li>
             <li className="menu__list-item">
-              <a href="#" className="menu__list-link">
+              <a href="#gallery" className="menu__list-link">
                 gallery
               </a>
             </li>
@@ -26,7 +60,7 @@ const HeaderComponent = () => {
             </li>
 
             <li className="menu__list-item">
-              <a href="#" className="menu__list-link">
+              <a href="#booking" className="menu__list-link">
                 bookings
               </a>
             </li>
@@ -42,22 +76,20 @@ const HeaderComponent = () => {
             </li>
           </ul>
         </menu>
-        <main className="main">
-          <h1 className="main__title">
-            Start Your Meal With Our Exclusive Menu
-          </h1>
-          <p className="main__text">
-            <a href="#" className="main__text-link">
-              LEARN MORE...
-            </a>
-          </p>
-          <div className="main__logo logo"></div>
-          <h2 className="main__title-sell">
-            book your table <span className="main__title-pay">NOW</span>
-          </h2>
-        </main>
-      </div>
-    </header>
+        <div className="header__inner-right">
+          <input
+            className="header__search searchForm"
+            type="text"
+            name="search"
+            id="search"
+            placeholder="search the food"
+          />
+          <span className="header__card card">
+            <span>399 грн</span>
+          </span>
+        </div>
+      </header>
+    </>
   );
 };
 

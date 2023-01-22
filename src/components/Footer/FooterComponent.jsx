@@ -1,12 +1,7 @@
 import React from "react";
 import "../Footer/footer.scss";
 import shortid from "shortid";
-const socialIcon = [
-  "https://cdn-icons-png.flaticon.com/512/1384/1384005.png",
-  "https://cdn-icons-png.flaticon.com/512/1384/1384017.png",
-  "https://cdn-icons-png.flaticon.com/512/1384/1384015.png",
-  "https://cdn-icons-png.flaticon.com/512/25/25698.png",
-];
+import socialIcon from "./Social.json";
 export const FooterComponent = () => {
   return (
     <footer className="footer">
@@ -35,10 +30,10 @@ export const FooterComponent = () => {
         {socialIcon.map((icon) => {
           return (
             <li key={shortid.generate()} className="footer__list-icon">
-              <a href="google">
+              <a href={icon.src} target="_blank" rel="noreferrer">
                 <img
                   className="footer__list-img"
-                  src={icon}
+                  src={icon.icon}
                   alt=""
                   width={45}
                   height={45}
