@@ -10,8 +10,11 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  &__inner-left {
-    margin: 0 20px;
+  &__inner-left,
+  &__inner-right {
+    width: 200px;
+    text-align: center;
+    // margin: 0 20px;
   }
 }
 .menu {
@@ -85,12 +88,12 @@
   }
 }
 .card {
-  padding: 0 15px;
-  margin-left: 30px;
+  // padding: 0 15px;
+  // margin-left: 30px;
   &::before {
     content: url("../../img/header/shopping-basket.png");
     position: absolute;
-    transform: translate(-35px, 0px);
+    transform: translate(-35px, -10px);
     filter: invert(80%) sepia(41%) saturate(1376%) hue-rotate(353deg) brightness(98%) contrast(108%);
   }
 }

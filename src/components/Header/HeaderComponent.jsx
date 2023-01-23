@@ -1,7 +1,9 @@
+import { useState } from "react";
+import { getPizza } from "../../api/PizzaApi";
 import "../Header/header.scss";
 import "../Main/main.scss";
 import { PopUpCity, PopUpRestaurant } from "./PopUp/PopUp";
-
+import { Link, NavLink } from "react-router-dom";
 const HeaderComponent = ({
   openToogleModal,
   modalCity,
@@ -41,28 +43,28 @@ const HeaderComponent = ({
         <menu className="menu">
           <ul className="menu__list">
             <li className="menu__list-item">
-              <a href="#about" className="menu__list-link">
+              <NavLink to="/" className="menu__list-link">
                 About us
-              </a>
+              </NavLink>
             </li>
             <li className="menu__list-item">
-              <a href="#" className="menu__list-link">
+              <Link to="/menu" className="menu__list-link">
                 menu
-              </a>
+              </Link>
             </li>
             <li className="menu__list-item">
-              <a href="#gallery" className="menu__list-link">
-                gallery
-              </a>
+              <NavLink to="/" className="menu__list-link">
+                Gallery
+              </NavLink>
             </li>
             <li className="menu__list-item">
               <span className="menu__logo logo"></span>
             </li>
 
             <li className="menu__list-item">
-              <a href="#booking" className="menu__list-link">
-                bookings
-              </a>
+              <NavLink to="/" className="menu__list-link">
+                Booking
+              </NavLink>
             </li>
             <li className="menu__list-item">
               <a href="#" className="menu__list-link">
@@ -77,13 +79,6 @@ const HeaderComponent = ({
           </ul>
         </menu>
         <div className="header__inner-right">
-          <input
-            className="header__search searchForm"
-            type="text"
-            name="search"
-            id="search"
-            placeholder="search the food"
-          />
           <span className="header__card card">
             <span>399 грн</span>
           </span>

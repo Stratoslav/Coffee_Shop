@@ -3,37 +3,35 @@ import "../PopUp/popup.scss";
 
 export const PopUpCity = () => {
   return (
-    <>
-      <div className="modal modal__city">
-        <ul className="modal__list">
-          <li className="modal__list-item">
-            <a className="modal__link" href="#">
-              Mykolaiv
-            </a>
-          </li>
-          <li className="modal__list-item">
-            <a className="modal__list-link" href="#">
-              Harkiv
-            </a>
-          </li>
-          <li className="modal__list-item">
-            <a className="modal__list-link" href="#">
-              Summy
-            </a>
-          </li>
-          <li className="modal__list-item">
-            <a className="modal__list-link" href="#">
-              Lviv
-            </a>
-          </li>
-          <li className="modal__list-item">
-            <a className="modal__list-link" href="#">
-              Dnipro
-            </a>
-          </li>
-        </ul>
-      </div>
-    </>
+    <div className="modal modal__city">
+      <ul className="modal__list">
+        <li className="modal__list-item">
+          <a className="modal__link" href="#">
+            Mykolaiv
+          </a>
+        </li>
+        <li className="modal__list-item">
+          <a className="modal__list-link" href="#">
+            Harkiv
+          </a>
+        </li>
+        <li className="modal__list-item">
+          <a className="modal__list-link" href="#">
+            Summy
+          </a>
+        </li>
+        <li className="modal__list-item">
+          <a className="modal__list-link" href="#">
+            Lviv
+          </a>
+        </li>
+        <li className="modal__list-item">
+          <a className="modal__list-link" href="#">
+            Dnipro
+          </a>
+        </li>
+      </ul>
+    </div>
   );
 };
 
