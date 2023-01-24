@@ -9,6 +9,7 @@
         &::before {
             position: absolute;
             transform: translate(-50%);
+            filter: invert(100%) sepia(0) saturate(0%) hue-rotate(0) brightness(1180) contrast(119%);
             content: url("../../img/header/logo-min.png");
         }
     }
@@ -19,12 +20,15 @@
         margin-bottom: 50px;
         font-size: 21px;
         font-family: "Overpass";
+        &-link {
+            color: #000;
+        }
     }
 }
 .icon {
     margin: 0 auto;
     width: 270px;
-    color: antiquewhite;
+    color: rgb(0, 0, 0);
     cursor: pointer;
-    filter: invert(100%) sepia(0) saturate(0%) hue-rotate(0) brightness(1180) contrast(119%);
+    // filter: invert(100%) sepia(0) saturate(0%) hue-rotate(0) brightness(1180) contrast(119%);
 }

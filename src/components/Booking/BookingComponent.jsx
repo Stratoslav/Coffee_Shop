@@ -52,7 +52,7 @@ export const BookingComponent = () => {
             <div className="booking__form-wrap">
               {" "}
               */
-              <label className="booking__form-label" for="name">
+              <label className="booking__form-label" htmlFor="name">
                 Your full name
               </label>
               <br />
@@ -68,8 +68,8 @@ export const BookingComponent = () => {
               />
               <div>{isError("name")}</div>
               <br />
-              <label className="booking__form-label" for="people">
-                How many people?
+              <label className="booking__form-label" htmlFor="people">
+                what drinks?
               </label>
               <br />
               <input
@@ -80,11 +80,11 @@ export const BookingComponent = () => {
                 type="number"
                 id="people"
                 name="people"
-                placeholder="people"
+                placeholder="Write a drinks"
               />
               <div>{isError("people")}</div>
               <br />
-              <label className="booking__form-label" for="date">
+              <label className="booking__form-label" htmlFor="date">
                 What is the date?
               </label>
               <br />
@@ -102,7 +102,7 @@ export const BookingComponent = () => {
             </div>
 
             <div className="booking__form-wrap">
-              <label className="booking__form-label" for="email">
+              <label className="booking__form-label" htmlFor="email">
                 Your email address?
               </label>
               <br />
@@ -119,7 +119,7 @@ export const BookingComponent = () => {
               <div>{isError("email")}</div>
 
               <br />
-              <label className="booking__form-label" for="time">
+              <label className="booking__form-label" htmlFor="time">
                 What time?
               </label>
               <br />
@@ -134,7 +134,7 @@ export const BookingComponent = () => {
               />
               <div>{isError("time")}</div>
               <br />
-              <label className="booking__form-label" for="phone">
+              <label className="booking__form-label" htmlFor="phone">
                 Your phone number?
               </label>
               <br />

@@ -1,7 +1,9 @@
 import React from "react";
+import { Card } from "../Card/Card";
 import "./menu.scss";
-
+import shortid from "shortid";
 export const MenuComponent = ({
+  handleClick,
   changeCoffee,
   isHotCoffee,
   hotCoffee,
@@ -18,43 +20,18 @@ export const MenuComponent = ({
           <>
             <h1 className="coffee__title">Hot Coffee</h1>
             <ul className="coffee__list">
-              {hotCoffee.map(
-                ({ id, description, image, ingredients, title }) => (
-                  <li className="coffee__list-item" key={id}>
-                    <img className="coffee__list-img" src={image} alt={title} />
-                    <div>
-                      <h3 className="coffee__list-title">{title}</h3>
-                      <p className="coffee__list-text">{description}</p>
-                      <p>ingredient:</p>
-                      {ingredients.map((ingredient) => (
-                        <span className="coffee__list-text">{ingredient}</span>
-                      ))}
-                    </div>
-                  </li>
-                )
-              )}
+              {hotCoffee.map((item) => (
+                <Card key={item.id} item={item} handleClick={handleClick} />
+              ))}
             </ul>
           </>
         ) : (
           <>
             <h1 className="coffee__title">Iced Coffee</h1>
             <ul className="coffee__list">
-              {icedCoffee.map(
-                ({ id, description, image, ingredients, title }) => (
-                  <li className="coffee__list-item" key={id}>
-                    <img className="coffee__list-img" src={image} alt={title} />
-                    <div>
-                      <h3 className="coffee__list-title">{title}</h3>
-
-                      <p className="coffee__list-text">{description}</p>
-                      <p>ingredient:</p>
-                      {ingredients.map((ingredient) => (
-                        <span className="coffee__list-text">{ingredient}</span>
-                      ))}
-                    </div>
-                  </li>
-                )
-              )}
+              {icedCoffee.map((item) => (
+                <Card key={item.id} item={item} handleClick={handleClick} />
+              ))}
             </ul>
           </>
         )}

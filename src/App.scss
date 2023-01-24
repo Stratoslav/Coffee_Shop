@@ -6,7 +6,7 @@
 }
 a {
   text-decoration: none;
-  color: #fff;
+  color: rgb(255, 255, 255);
   position: relative;
   cursor: pointer;
   &:hover {
@@ -24,10 +24,10 @@ li {
   src: url("https://fonts.googleapis.com/css2?family=Chivo:wght@100;400&family=Overpass:wght@300;400&family=Titillium+Web:wght@200&display=swap");
 }
 body {
-  background-color: rgb(33 33 33);
+  background-color: rgb(255, 255, 255);
   font-family: "Chivo", sans-serif;
   font-weight: 400;
-  color: #ffffff;
+  color: #000000;
 }
 
 .container {

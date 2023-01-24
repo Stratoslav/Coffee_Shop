@@ -3,7 +3,7 @@ import axios from "axios";
 import "./menu.scss";
 import { MenuComponent } from "./MenuComponent";
 
-export const Menu = () => {
+export const Menu = ({ handleClick }) => {
   let [hotCoffee, setHotCoffee] = useState([]);
   let [icedCoffee, setIcedCoffee] = useState([]);
   let [isHotCoffee, setIsHotCoffee] = useState("Hot");
@@ -15,7 +15,6 @@ export const Menu = () => {
   }, []);
   useEffect(() => {
     axios.get(`https://api.sampleapis.com/coffee/iced`).then((res) => {
-      console.log(res.data);
       setIcedCoffee(res.data);
     });
   }, []);
@@ -30,6 +29,7 @@ export const Menu = () => {
         isHotCoffee={isHotCoffee}
         hotCoffee={hotCoffee}
         icedCoffee={icedCoffee}
+        handleClick={handleClick}
       />
     </>
   );

@@ -4,11 +4,16 @@ import "../Header/header.scss";
 import "../Main/main.scss";
 import { PopUpCity, PopUpRestaurant } from "./PopUp/PopUp";
 import { Link, NavLink } from "react-router-dom";
+import { Menu } from "antd";
+import { CardShop } from "../Card/CardShop";
+
 const HeaderComponent = ({
+  cart,
   openToogleModal,
   modalCity,
   popUpRestaurant,
   modalRestaurant,
+  setShow,
 }) => {
   return (
     <>
@@ -17,9 +22,9 @@ const HeaderComponent = ({
           <span className="city">
             <a
               onClick={openToogleModal}
-              className="city__link"
+              className="city__link city__js"
               href="#f"
-              class="city__js"
+              // class="city__js"
               data-action="open-modal"
             >
               Kyiv
@@ -29,10 +34,10 @@ const HeaderComponent = ({
 
           <span className="restaurant">
             <a
-              className="restaurant__link"
+              className="restaurant__link restaurant__js"
               onClick={popUpRestaurant}
               href="#rs"
-              class="restaurant__js"
+              //  class="restaurant__js"
               data-action="open-modal"
             >
               restaurant
@@ -48,7 +53,11 @@ const HeaderComponent = ({
               </NavLink>
             </li>
             <li className="menu__list-item">
-              <Link to="/menu" className="menu__list-link">
+              <Link
+                onClick={() => setShow(true)}
+                to="/menu"
+                className="menu__list-link"
+              >
                 menu
               </Link>
             </li>
@@ -78,11 +87,22 @@ const HeaderComponent = ({
             </li>
           </ul>
         </menu>
-        <div className="header__inner-right">
-          <span className="header__card card">
-            <span>399 грн</span>
-          </span>
-        </div>
+        <nav className={cart.length === 0 ? "disabled" : "header__inner-right"}>
+          <div className="nav_box" onClick={() => setShow(false)}>
+            <NavLink to="/menu">
+              <div className="card">
+                <span></span>
+                {/* <img
+                    width={30}
+                    ="../../img/header/shopping-basket.png"
+                    alt=""
+                  /> */}
+
+                <span>{cart.length}</span>
+              </div>
+            </NavLink>
+          </div>
+        </nav>
       </header>
     </>
   );
