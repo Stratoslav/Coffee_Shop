@@ -1,45 +1,9 @@
 import React from "react";
 import "../Booking/booking.scss";
-import { Field, Form, Formik, useFormik } from "formik";
-import basicSchema from "../schemas/schemas";
-export const BookingComponent = () => {
-  const onSubmit = async (values, action) => {
-    await new Promise((res) => setTimeout(res, 1000));
-    action.resetForm();
-  };
-  const {
-    values,
-    handleChange,
-    errors,
-    touched,
-    isSubmitting,
-    handleBlur,
-    handleSubmit,
-  } = useFormik({
-    initialValues: {
-      email: "",
-      name: "",
-      people: "",
-      date: "",
-      time: "",
-      phone: "",
-    },
-    validationSchema: basicSchema,
-    onSubmit,
-  });
-  const isError = (field) => {
-    return errors[field] && touched[field] ? (
-      <p className="errors__text">{errors[field]}</p>
-    ) : null;
-  };
-  let isErrorClass = (value) => {
-    if (errors[value] && touched[value]) {
-      return "input__error";
-    } else {
-      return "booking__form-input";
-    }
-  };
 
+export const BookingComponent = ({ isErrorClass, isError, formik }) => {
+  const { values, handleChange, isSubmitting, handleBlur, handleSubmit } =
+    formik;
   return (
     <section className="booking" id="booking">
       <div className="booking__container">
@@ -51,7 +15,6 @@ export const BookingComponent = () => {
           <div>
             <div className="booking__form-wrap">
               {" "}
-              */
               <label className="booking__form-label" htmlFor="name">
                 Your full name
               </label>
@@ -68,21 +31,21 @@ export const BookingComponent = () => {
               />
               <div>{isError("name")}</div>
               <br />
-              <label className="booking__form-label" htmlFor="people">
-                what drinks?
+              <label className="booking__form-label" htmlFor="address">
+                Your address?
               </label>
               <br />
               <input
                 onChange={handleChange}
-                value={values.people}
+                value={values.address}
                 onBlur={handleBlur}
-                className={isErrorClass("people")}
-                type="number"
-                id="people"
-                name="people"
+                className={isErrorClass("address")}
+                type="string"
+                id="address"
+                name="address"
                 placeholder="Write a drinks"
               />
-              <div>{isError("people")}</div>
+              <div>{isError("address")}</div>
               <br />
               <label className="booking__form-label" htmlFor="date">
                 What is the date?

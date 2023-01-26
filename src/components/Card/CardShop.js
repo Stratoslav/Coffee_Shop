@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import shortid from "shortid";
 import "../Card/cardShop.scss";
-export const CardShop = ({ cart, setCart, handleChange }) => {
+const CardShop = ({ cart, setCart, handleChange }) => {
   let [count, setCount] = useState(1);
-  let goodsId = shortid.generate();
 
   const handleRemove = (id) => {
     const arr = cart.filter((item) => item.id !== id);
@@ -67,3 +66,5 @@ export const CardShop = ({ cart, setCart, handleChange }) => {
     </ul>
   );
 };
+
+export default CardShop;

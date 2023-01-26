@@ -5,7 +5,7 @@ export const GalleryComponent = () => {
   return (
     <section className="gallery" id="gallery">
       <div className="gallery__container">
-        <img className="gallery__img" src={s} alt="" />
+        <img className="gallery__img" loading="lazy" src={s} alt="" />
       </div>
     </section>
   );

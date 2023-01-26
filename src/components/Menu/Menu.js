@@ -3,29 +3,42 @@ import axios from "axios";
 import "./menu.scss";
 import { MenuComponent } from "./MenuComponent";
 
-export const Menu = ({ handleClick }) => {
+const Menu = ({ handleClick }) => {
   let [hotCoffee, setHotCoffee] = useState([]);
   let [icedCoffee, setIcedCoffee] = useState([]);
   let [isHotCoffee, setIsHotCoffee] = useState("Hot");
 
+  const getHotCoffee = async () => {
+    const response = await axios
+      .get(`https://api.sampleapis.com/coffee/hot`)
+      .then((res) => {
+        return res.data;
+      });
+    setHotCoffee(response);
+  };
+
+  const getIcedCoffee = async () => {
+    const response = await axios
+      .get(`https://api.sampleapis.com/coffee/iced`)
+      .then((res) => {
+        return res.data;
+      });
+    setIcedCoffee(response);
+  };
+
   useEffect(() => {
-    axios.get(`https://api.sampleapis.com/coffee/hot`).then((res) => {
-      setHotCoffee(res.data);
-    });
+    getHotCoffee();
+    getIcedCoffee();
   }, []);
-  useEffect(() => {
-    axios.get(`https://api.sampleapis.com/coffee/iced`).then((res) => {
-      setIcedCoffee(res.data);
-    });
-  }, []);
-  const changeCoffee = (e) => {
+
+  const changeTypeOfCoffee = () => {
     isHotCoffee === "Hot" ? setIsHotCoffee("Iced") : setIsHotCoffee("Hot");
   };
 
   return (
     <>
       <MenuComponent
-        changeCoffee={changeCoffee}
+        changeTypeOfCoffee={changeTypeOfCoffee}
         isHotCoffee={isHotCoffee}
         hotCoffee={hotCoffee}
         icedCoffee={icedCoffee}
@@ -34,3 +47,5 @@ export const Menu = ({ handleClick }) => {
     </>
   );
 };
+
+export default Menu;

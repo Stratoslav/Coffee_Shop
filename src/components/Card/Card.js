@@ -16,7 +16,7 @@ export const Card = ({ item, handleClick }) => {
         {ingredients.map((ingredient) => (
           <span className="coffee__list-text">{ingredient}</span>
         ))}
-        <p>30 $</p>
+        <p className="coffee__list-price">30 $</p>
         <button
           className="coffee__list-button"
           onClick={() => handleClick(item)}

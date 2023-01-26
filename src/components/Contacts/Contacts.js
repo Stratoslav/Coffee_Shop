@@ -11,10 +11,11 @@ export const Contacts = () => {
           eiusmod tempor incididunt ut labore etdolore magna sed do eiusmod
           tempor incididunt ut labore etdolore
         </p>
-
-        <a href="#" className="contacts__link">
-          Contact us now
-        </a>
+        <div className="contacts__wrap">
+          <a href="#c" className="contacts__link">
+            Contact us now
+          </a>
+        </div>
       </div>
       <Footer />
     </section>

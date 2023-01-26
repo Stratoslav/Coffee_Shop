@@ -1,13 +1,16 @@
 import "./App.scss";
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Header } from "./components/Header/Header";
 
 import MainComponent from "./components/Main/Main";
 
-import { Menu } from "./components/Menu/Menu";
-import { useEffect, useState } from "react";
-import { CardShop } from "./components/Card/CardShop";
+// import { Menu } from "./components/Menu/Menu";
+import { useState, lazy, Suspense } from "react";
+
 import { Booking } from "./components/Booking/Booking";
+const CardShop = lazy(() => import("./components/Card/CardShop"));
+const Menu = lazy(() => import("./components/Menu/Menu"));
+
 function App() {
   const [show, setShow] = useState(true);
   let [cart, setCart] = useState([]);
@@ -33,24 +36,26 @@ function App() {
     <div className="App">
       <Header setShow={setShow} cart={cart} show={show} />
       <div className="container">
-        <Routes>
-          <Route exact path="/" element={<MainComponent />} />
-          <Route exact path="/registration" element={<Booking />} />
-          <Route
-            path="/menu"
-            element={
-              show === true ? (
-                <Menu handleClick={handleClick} />
-              ) : (
-                <CardShop
-                  cart={cart}
-                  setCart={setCart}
-                  handleChange={handleChange}
-                />
-              )
-            }
-          />
-        </Routes>
+        <Suspense>
+          <Routes>
+            <Route exact path="/" element={<MainComponent />} />
+            <Route exact path="/registration" element={<Booking />} />
+            <Route
+              path="/menu"
+              element={
+                show === true ? (
+                  <Menu handleClick={handleClick} />
+                ) : (
+                  <CardShop
+                    cart={cart}
+                    setCart={setCart}
+                    handleChange={handleChange}
+                  />
+                )
+              }
+            />
+          </Routes>
+        </Suspense>
       </div>
     </div>
   );

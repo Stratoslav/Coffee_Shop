@@ -1,43 +1,45 @@
-import React, { useState } from "react";
+import React from "react";
 import { BookingComponent } from "./BookingComponent";
-import { Formik } from "formik";
 import { useFormik } from "formik";
+import basicSchema from "../schemas/schemas";
 
 export const Booking = () => {
-  // const formik = useFormik({
-  //   initialValues: {
-  //     email: "",
-  //   },
-  //   onSubmit: (values) => {
-  //     alert(JSON.stringify(values, null, 2));
-  //   },
-  //   handleChange: (event) => {
-  //     console.log(event.target.value);
-  //     setEmail((prevValues) => ({
-  //       [email]: event.target.value,
-  //     }));
-  //   },
-  //   handleSubmit: (e) => {
-  //     e.preventDefault();
-  //   },
-  // });
-
+  const onSubmit = async (values, action) => {
+    console.log(values);
+    await new Promise((res) => setTimeout(res, 1000));
+    action.resetForm();
+  };
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      name: "",
+      address: "",
+      date: "",
+      time: "",
+      phone: "",
+    },
+    validationSchema: basicSchema,
+    onSubmit,
+  });
+  const isError = (field) => {
+    return formik.errors[field] && formik.touched[field] ? (
+      <p className="errors__text">{formik.errors[field]}</p>
+    ) : null;
+  };
+  let isErrorClass = (value) => {
+    if (formik.errors[value] && formik.touched[value]) {
+      return "input__error";
+    } else {
+      return "booking__form-input";
+    }
+  };
   return (
     <>
-      <BookingComponent />
-      {/* 
-      <form onSubmit={formik.handleSubmit}>
-        <label htmlFor="email">Email Address</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          onChange={formik.handleChange}
-          value={formik.values.email}
-        />
-
-        <button type="submit">Submit</button>
-      </form> */}
+      <BookingComponent
+        isError={isError}
+        isErrorClass={isErrorClass}
+        formik={formik}
+      />
     </>
   );
 };

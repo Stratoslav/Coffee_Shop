@@ -17,6 +17,9 @@
     // margin: 0 20px;
   }
 }
+.fixed {
+  position: fixed;
+}
 .menu {
   box-sizing: border-box;
   max-width: 900px;
@@ -105,7 +108,7 @@
   & > span:nth-child(1) {
     font-size: 2rem;
     content: url("../../img/header/shopping-basket.png");
-    filter: invert(80%) sepia(41%) saturate(1376%) hue-rotate(353deg) brightness(98%) contrast(108%);
+    filter: invert(80%) sepia(41%) saturate(0) hue-rotate(347deg) brightness(101%) contrast(129%);
   }
   & > span:nth-child(2) {
     padding: 0 5px;

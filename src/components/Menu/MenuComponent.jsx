@@ -1,10 +1,10 @@
 import React from "react";
 import { Card } from "../Card/Card";
 import "./menu.scss";
-import shortid from "shortid";
+
 export const MenuComponent = ({
   handleClick,
-  changeCoffee,
+  changeTypeOfCoffee,
   isHotCoffee,
   hotCoffee,
   icedCoffee,
@@ -12,7 +12,7 @@ export const MenuComponent = ({
   return (
     <>
       <section className="coffee">
-        <button className="toggle__button button" onClick={changeCoffee}>
+        <button className="toggle__button button" onClick={changeTypeOfCoffee}>
           See {isHotCoffee} coffees
         </button>
 
