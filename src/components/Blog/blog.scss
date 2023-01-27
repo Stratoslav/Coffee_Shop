@@ -1,0 +1,87 @@
+.blog {
+    color: black;
+
+    &__container {
+        padding-top: 120px;
+    }
+    &__title {
+        background-color: beige;
+        width: 770px;
+        padding: 20px;
+        font-size: 48px;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 100px;
+        font-weight: 700;
+    }
+    &__detail {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+    &__author {
+        text-decoration: dotted;
+    }
+    &__likes {
+        position: relative;
+
+        font-size: 24px;
+        background: inherit;
+        cursor: pointer;
+        &::before {
+            position: absolute;
+            right: -35px;
+            top: -3px;
+            content: url("../../img/blog/love.png");
+        }
+    }
+    &__likes-active {
+        position: relative;
+        font-size: 24px;
+        background: inherit;
+        cursor: pointer;
+        &::before {
+            position: absolute;
+            right: -35px;
+            top: -3px;
+            content: url("../../img/blog/love.png");
+            filter: invert(20%) sepia(64%) saturate(7474%) hue-rotate(356deg) brightness(92%) contrast(122%);
+        }
+    }
+    &__list {
+        display: block;
+        padding-bottom: 100px;
+        &-item {
+            margin-bottom: 10px;
+        }
+        &-link {
+            color: #000;
+            font-size: 40px;
+        }
+    }
+    &__history {
+        max-width: 900px;
+        margin: 0 auto;
+        font-size: 18px;
+        line-height: 1.5;
+        padding-bottom: 100px;
+    }
+    &__author {
+    }
+}
+
+.footer__blog {
+    margin: 0 auto;
+    background-color: rgb(214, 141, 46);
+    padding: 15px 0 100px;
+    text-align: center;
+    background: antiquewhite;
+    position: relative;
+}
+
+.p {
+    margin-bottom: 20px;
+}

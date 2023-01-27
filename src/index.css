@@ -9,6 +9,10 @@ body {
 }
 html{
   scroll-behavior: smooth;
+
+}
+html:root{
+  --swiper-theme-color: #000;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

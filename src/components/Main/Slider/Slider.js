@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import { Navigation, EffectFade } from "swiper";
+import { Navigation, EffectFade, Autoplay, Pagination } from "swiper";
 import axios from "axios";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/scss/effect-fade";
 import "./slider.scss";
+
+import "swiper/css/pagination";
 import "../../Header/header.scss";
 import { NavLink } from "react-router-dom";
 
@@ -26,16 +28,21 @@ export const Slider = () => {
   return (
     <>
       <Swiper
-        modules={[Navigation, EffectFade]}
+        modules={[Navigation, EffectFade, Autoplay, Pagination]}
         slidesPerView={1}
-        navigation
-        effect
+        navigation={true}
+        effect={"flip"}
         speed={800}
         loop
-        pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
-        // onSwiper={setThumbsSwiper}
+        pagination={{
+          clickable: true,
+        }}
         onSlideChange={() => console.log("slide change")}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
       >
         <div>
           {hotCoffee.map(({ title, image, description, id }) => (
@@ -44,6 +51,7 @@ export const Slider = () => {
                 <img
                   className="slider__img"
                   width={300}
+                  height={270}
                   src={image}
                   alt={title}
                 />

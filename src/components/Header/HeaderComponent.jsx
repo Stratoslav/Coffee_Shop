@@ -77,9 +77,9 @@ const HeaderComponent = ({
               </a>
             </li>
             <li className="menu__list-item">
-              <a href="#" className="menu__list-link">
+              <NavLink to="/blog" className="menu__list-link">
                 blog
-              </a>
+              </NavLink>
             </li>
           </ul>
         </menu>

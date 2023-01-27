@@ -5,10 +5,10 @@ import { Header } from "./components/Header/Header";
 
 import MainComponent from "./components/Main/Main";
 
-// import { Menu } from "./components/Menu/Menu";
 import { useState, lazy, Suspense } from "react";
 
 import { Booking } from "./components/Booking/Booking";
+import { Blog } from "./components/Blog/Blog";
 const CardShop = lazy(() => import("./components/Card/CardShop"));
 const Menu = lazy(() => import("./components/Menu/Menu"));
 
@@ -55,6 +55,7 @@ function App() {
                 )
               }
             />
+            <Route path="/blog" element={<Blog />} />
           </Routes>
         </Suspense>
       </div>

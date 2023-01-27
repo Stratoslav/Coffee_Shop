@@ -15,7 +15,7 @@ const MainComponent = () => {
       <section className="main__container">
         <div className="main__wrap">
           <h1 className="main__title">
-            Start Your Meal With Our Exclusive Menu
+            Start Your Day With Our Exclusive Coffee
           </h1>
           <Slider />
         </div>
