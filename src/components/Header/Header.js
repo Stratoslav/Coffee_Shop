@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import HeaderComponent from "./HeaderComponent";
 
-export const Header = ({ setShow, show, cart }) => {
+export const Header = ({ setShow }) => {
   const [modalCity, setModalCity] = useState(false);
   const [modalRestaurant, setModalRestaurant] = useState(false);
 
@@ -18,15 +18,7 @@ export const Header = ({ setShow, show, cart }) => {
 
   return (
     <>
-      <HeaderComponent
-        show={show}
-        cart={cart}
-        openToogleModal={openToogleModal}
-        popUpRestaurant={popUpRestaurant}
-        modalCity={modalCity}
-        modalRestaurant={modalRestaurant}
-        setShow={setShow}
-      />
+      <HeaderComponent setShow={setShow} />
     </>
   );
 };

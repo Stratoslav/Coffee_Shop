@@ -1,25 +1,26 @@
 import React from "react";
-
+import { useDispatch, useSelector } from "react-redux";
 import "../Header/header.scss";
 import "../Main/main.scss";
 import { PopUpCity, PopUpRestaurant } from "./PopUp/PopUp";
 import { Link, NavLink } from "react-router-dom";
+import { popUpAction } from "../../redux/slice/slicePopUp";
+import { navigationAction } from "../../redux/slice/sliceNavigation";
 
-const HeaderComponent = ({
-  cart,
-  openToogleModal,
-  modalCity,
-  popUpRestaurant,
-  modalRestaurant,
-  setShow,
-}) => {
+const HeaderComponent = () => {
+  const cart = useSelector((state) => state.cardShopReducer.card);
+  const { modalCity, modalRestaurant } = useSelector(
+    (state) => state.popUpReducer
+  );
+  const dispatch = useDispatch();
+
   return (
     <>
       <header className="header">
         <div className="header__inner-left">
           <span className="city">
             <a
-              onClick={openToogleModal}
+              onClick={() => dispatch(popUpAction.openToogleModal())}
               className="city__link city__js"
               href="#f"
               data-action="open-modal"
@@ -32,7 +33,7 @@ const HeaderComponent = ({
           <span className="restaurant">
             <a
               className="restaurant__link restaurant__js"
-              onClick={popUpRestaurant}
+              onClick={() => dispatch(popUpAction.popUpRestaurant())}
               href="#rs"
               data-action="open-modal"
             >
@@ -50,7 +51,9 @@ const HeaderComponent = ({
             </li>
             <li className="menu__list-item">
               <Link
-                onClick={() => setShow(true)}
+                onClick={() =>
+                  dispatch(navigationAction.handleShowComponent(true))
+                }
                 to="/menu"
                 className="menu__list-link"
               >
@@ -84,7 +87,12 @@ const HeaderComponent = ({
           </ul>
         </menu>
         <nav className={cart.length === 0 ? "disabled" : "header__inner-right"}>
-          <div className="nav_box" onClick={() => setShow(false)}>
+          <div
+            className="nav_box"
+            onClick={() =>
+              dispatch(navigationAction.handleShowComponent(false))
+            }
+          >
             <NavLink to="/menu">
               <div className="card">
                 <span></span>

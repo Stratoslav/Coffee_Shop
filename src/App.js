@@ -8,34 +8,21 @@ import MainComponent from "./components/Main/Main";
 import { useState, lazy, Suspense } from "react";
 
 import { Booking } from "./components/Booking/Booking";
-import { Blog } from "./components/Blog/Blog";
+import { Blog } from "./components/Blog/Blog.tsx";
+
+import { useSelector } from "react-redux";
 const CardShop = lazy(() => import("./components/Card/CardShop"));
 const Menu = lazy(() => import("./components/Menu/Menu"));
 
 function App() {
-  const [show, setShow] = useState(true);
-  let [cart, setCart] = useState([]);
-
-  const handleClick = (item) => {
-    if (cart.includes(item)) {
-      return;
-    }
-
-    setCart([...cart, item]);
-    console.log(cart);
-  };
-  const handleChange = (item, d) => {
-    const index = cart.indexOf(item);
-    const arr = cart;
-    arr[index].l += d;
-
-    if (arr[index].amount === 0) arr[index].amount = 1;
-    setCart([...arr]);
-  };
-
+  //const [show, setShow] = useState(true);
+  const isShowComponent = useSelector(
+    (state) => state.navigationReducer.isShowComponent
+  );
+  console.log(isShowComponent);
   return (
     <div className="App">
-      <Header setShow={setShow} cart={cart} show={show} />
+      <Header />
       <div className="container">
         <Suspense>
           <Routes>
@@ -43,17 +30,7 @@ function App() {
             <Route exact path="/registration" element={<Booking />} />
             <Route
               path="/menu"
-              element={
-                show === true ? (
-                  <Menu handleClick={handleClick} />
-                ) : (
-                  <CardShop
-                    cart={cart}
-                    setCart={setCart}
-                    handleChange={handleChange}
-                  />
-                )
-              }
+              element={isShowComponent === true ? <Menu /> : <CardShop />}
             />
             <Route path="/blog" element={<Blog />} />
           </Routes>

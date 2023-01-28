@@ -1,32 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import shortid from "shortid";
-import "../Card/cardShop.scss";
-const CardShop = ({ cart, setCart, handleChange }) => {
-  let [count, setCount] = useState(1);
+import { CardShopAction } from "../../redux/slice/sliceCardShop";
 
-  const handleRemove = (id) => {
-    const arr = cart.filter((item) => item.id !== id);
-    setCart(arr);
-    // handleCount();
-  };
-  // const handleCount = () => {
-  //   let num = 0;
-  //   cart.map((item) => (num += 1));
-  //   setCount(num);
-  // };
-  const handleIncriment = () => {
-    setCount((count += 1));
-  };
-  const handleDicriment = () => {
-    if (count !== 0) {
-      setCount((count -= 1));
+import "../Card/cardShop.scss";
+const CardShop = () => {
+  const dispatch = useDispatch();
+
+  // const { count } = useSelector((state) => state.cardShopReducer);
+  const addMountOfCoffee = (e) => {
+    console.log(e);
+    if (Number(e.target.value) <= 0) {
+      return (e.target.value = 0);
     }
   };
-
-  // useEffect(() => {
-  //   // handleCount();
-  // }, []);
+  const cart = useSelector((state) => state.cardShopReducer.card);
   return (
     <ul className="cardShop">
       {cart.map(({ id, image, title, ingredients, description }) => (
@@ -38,22 +26,28 @@ const CardShop = ({ cart, setCart, handleChange }) => {
             <p className="cardShop__price">30 $</p>
           </div>
           <div>
-            <button
+            <input disabled type="" onClick={addMountOfCoffee} />
+            {/* <button
               className="cardShop__button"
-              onClick={() => handleIncriment()}
+              onClick={(e) =>
+                dispatch(CardShopAction.handleIncrement(e.target.value))
+              }
             >
               +
             </button>
             <span className="cardShop__number">{count}</span>
             <button
               className="cardShop__button"
-              onClick={() => handleDicriment()}
+              onClick={(e) =>
+                dispatch(CardShopAction.handleDecrement(e.target.value))
+              }
             >
               -
-            </button>
+            </button> */}
+
             <button
               className="cardShop__button"
-              onClick={() => handleRemove(id)}
+              onClick={() => dispatch(CardShopAction.handleRemoveCard(id))}
             >
               Remove
             </button>

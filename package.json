@@ -4,15 +4,21 @@
   "private": true,
   "homepage": ".",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.1",
     "@splidejs/splide": "^4.1.4",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^29.4.0",
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
     "axios": "^1.2.3",
     "formik": "^2.2.9",
     "gsap": "^3.11.4",
     "react": ">=16",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.7.0",
     "react-scripts": "5.0.1",
@@ -46,5 +52,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "typescript": "^4.9.4"
   }
 }

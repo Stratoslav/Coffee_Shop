@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { CardShopAction } from "../../redux/slice/sliceCardShop";
 import "../Card/card.scss";
 
-export const Card = ({ item, handleClick }) => {
+export const Card = ({ item }) => {
+  const [click, setClick] = useState(false);
   const { id, image, title, description, ingredients } = item;
+
+  const dispatch = useDispatch();
+
+  function clicked() {
+    dispatch(CardShopAction.handleClickCard(item));
+    setClick(true);
+  }
   return (
     <li className="coffee__list-item cards" key={id}>
       <div className="image__box">
-        <img className="coffee__list-img" src={image} alt={title} />
+        <img
+          height={300}
+          className="coffee__list-img"
+          src={image}
+          alt={title}
+        />
       </div>
 
       <div className="details">
@@ -18,8 +33,9 @@ export const Card = ({ item, handleClick }) => {
         ))}
         <p className="coffee__list-price">30 $</p>
         <button
+          disabled={click}
           className="coffee__list-button"
-          onClick={() => handleClick(item)}
+          onClick={() => clicked()}
           type="button"
         >
           Add to Cart

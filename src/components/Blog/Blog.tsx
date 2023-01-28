@@ -1,15 +1,17 @@
-import React, { useState } from "react";
-import { NavLink, Route, Routes } from "react-router-dom";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { blogAction } from "../../redux/slice/sliceBlog";
+
 import { Footer } from "../Footer/Footer";
 import "./blog.scss";
-import { BlogAboutCoffee } from "./BlogAboutCoffee";
 
 export const Blog = () => {
-  const [likeCount, setLikeCount] = useState(0);
-  const [redLike, setRedLike] = useState(false);
-  const handleLikeCount = (e) => {
-    setLikeCount((prev) => prev + 1);
-    setRedLike(true);
+  const dispatch = useDispatch();
+  const { likeCount, redLike } = useSelector((state: any) => state.blogReducer);
+
+  const handleClick = (e) => {
+    console.log(e.target);
+    dispatch(blogAction.handleLikeCount(e.target.value));
   };
   return (
     <section className="blog__container">
@@ -19,7 +21,7 @@ export const Blog = () => {
         <button
           disabled={redLike}
           className={!redLike ? "blog__likes" : "blog__likes-active"}
-          onClick={handleLikeCount}
+          onClick={handleClick}
         >
           {likeCount} likes
         </button>
@@ -112,10 +114,8 @@ export const Blog = () => {
         believe it myself,” David said. Together, they walked out the door, Lila
         skipping as she held hands with her new friend.
       </div>
-      <Routes>
-        <Route path="/blog/history-of-coffee" element={<BlogAboutCoffee />} />
-      </Routes>
-      <Footer className="footer__blog" />
+
+      <Footer />
     </section>
   );
 };
