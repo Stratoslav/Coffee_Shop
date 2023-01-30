@@ -7,7 +7,6 @@ import "../Card/cardShop.scss";
 const CardShop = () => {
   const dispatch = useDispatch();
 
-  // const { count } = useSelector((state) => state.cardShopReducer);
   const addMountOfCoffee = (e) => {
     console.log(e);
     if (Number(e.target.value) <= 0) {
@@ -17,7 +16,7 @@ const CardShop = () => {
   const cart = useSelector((state) => state.cardShopReducer.card);
   return (
     <ul className="cardShop">
-      {cart.map(({ id, image, title, ingredients, description }) => (
+      {cart.map(({ id, image, title, description }) => (
         <li className="cardShop__wrap" key={id}>
           <div className="details cardShop__data">
             <img className="coffee__list-img" src={image} alt={title} />
@@ -27,23 +26,6 @@ const CardShop = () => {
           </div>
           <div>
             <input disabled type="" onClick={addMountOfCoffee} />
-            {/* <button
-              className="cardShop__button"
-              onClick={(e) =>
-                dispatch(CardShopAction.handleIncrement(e.target.value))
-              }
-            >
-              +
-            </button>
-            <span className="cardShop__number">{count}</span>
-            <button
-              className="cardShop__button"
-              onClick={(e) =>
-                dispatch(CardShopAction.handleDecrement(e.target.value))
-              }
-            >
-              -
-            </button> */}
 
             <button
               className="cardShop__button"

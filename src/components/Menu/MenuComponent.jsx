@@ -5,13 +5,11 @@ import { Card } from "../Card/Card";
 import "./menu.scss";
 
 export const MenuComponent = ({
-  // handleClick,
   changeTypeOfCoffee,
   isHotCoffee,
   hotCoffee,
   icedCoffee,
 }) => {
-  const id = shortid.generate();
   return (
     <>
       <section className="coffee">
@@ -24,7 +22,7 @@ export const MenuComponent = ({
             <h1 className="coffee__title">Hot Coffee</h1>
             <ul className="coffee__list">
               {hotCoffee.map((item) => (
-                <Card key={item.id + 1000} item={item} />
+                <Card key={item.id} item={item} />
               ))}
             </ul>
           </>

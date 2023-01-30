@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { blogAction } from "../../redux/slice/sliceBlog";
 
@@ -10,21 +10,22 @@ export const Blog = () => {
   const { likeCount, redLike } = useSelector((state: any) => state.blogReducer);
 
   const handleClick = (e) => {
-    console.log(e.target);
     dispatch(blogAction.handleLikeCount(e.target.value));
   };
+
   return (
     <section className="blog__container">
       <h1 className="blog__title ">The Coffee Shop</h1>
       <div className="blog__detail">
         <span className="blog__author">Author: Jon Doe</span>
-        <button
-          disabled={redLike}
-          className={!redLike ? "blog__likes" : "blog__likes-active"}
-          onClick={handleClick}
-        >
-          {likeCount} likes
-        </button>
+        <div>
+          <button
+            className={!redLike ? "blog__likes" : "blog__likes-active"}
+            onClick={handleClick}
+          >
+            {likeCount} likes
+          </button>
+        </div>
       </div>
       <div className="blog__history">
         Lila opened the door cautiously. There was an odd feeling in the coffee

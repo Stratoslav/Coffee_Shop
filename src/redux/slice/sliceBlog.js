@@ -7,8 +7,12 @@ const blogSlice = createSlice({
   initialState: initialState,
   reducers: {
     handleLikeCount(state, action) {
-      state.likeCount = action.payload += 1;
-      state.redLike = true;
+      state.redLike = !state.redLike;
+      if (state.redLike) {
+        state.likeCount = action.payload += 1;
+      } else {
+        state.likeCount -= 1;
+      }
     },
   },
 });

@@ -38,3 +38,35 @@
     text-align: center;
   }
 }
+.phone__item,
+.viber__item,
+.telegam__item {
+  &::before {
+    padding-right: 10px;
+  }
+}
+
+.phone__item::before {
+  content: url("../../img/header/phone.png");
+}
+.viber__item::before {
+  content: url("../../img/header/viber.png");
+}
+.telegam__item::before {
+  content: url("../../img/header/telegram.png");
+}
+
+.contacts__item {
+  min-width: 230px;
+  & > a {
+    color: black;
+  }
+  &::before {
+    content: url("../../img/header/towards.png");
+    position: absolute;
+    top: -20px;
+    top: -11px;
+    left: 8px;
+    filter: invert(100%) sepia(0) saturate(0%) hue-rotate(0) brightness(1180) contrast(119%);
+  }
+}

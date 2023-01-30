@@ -6,12 +6,15 @@ import { PopUpCity, PopUpRestaurant } from "./PopUp/PopUp";
 import { Link, NavLink } from "react-router-dom";
 import { popUpAction } from "../../redux/slice/slicePopUp";
 import { navigationAction } from "../../redux/slice/sliceNavigation";
+import { PopUpContacts } from "../Contacts/PoPuContacts";
+import { contactActions } from "../../redux/slice/sliceContacts";
 
 const HeaderComponent = () => {
   const cart = useSelector((state) => state.cardShopReducer.card);
   const { modalCity, modalRestaurant } = useSelector(
     (state) => state.popUpReducer
   );
+  const { contactPopUp } = useSelector((s) => s.contactReducer);
   const dispatch = useDispatch();
 
   return (
@@ -74,10 +77,15 @@ const HeaderComponent = () => {
                 Booking
               </NavLink>
             </li>
-            <li className="menu__list-item">
-              <a href="#" className="menu__list-link">
+            <li className="menu__list-item ">
+              <a
+                onClick={() => dispatch(contactActions.openOrCloseModal())}
+                href="#"
+                className="menu__list-link"
+              >
                 contact
               </a>
+              {contactPopUp && <PopUpContacts />}
             </li>
             <li className="menu__list-item">
               <NavLink to="/blog" className="menu__list-link">
