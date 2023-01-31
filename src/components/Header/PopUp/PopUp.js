@@ -1,35 +1,32 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
+import { popUpAction } from "../../../redux/slice/slicePopUp";
 import "../PopUp/popup.scss";
+import shortid from "shortid";
 
 export const PopUpCity = () => {
+  const city = useSelector((s) => s.popUpReducer.city);
+  const dispatch = useDispatch();
+  const getCurrentCity = (e) => {
+    dispatch(popUpAction.ChooseCurrentCity(e.target.innerHTML));
+  };
   return (
     <div className="modal modal__city">
       <ul className="modal__list">
-        <li className="modal__list-item">
-          <a className="modal__link" href="#">
-            Mykolaiv
-          </a>
-        </li>
-        <li className="modal__list-item">
-          <a className="modal__list-link" href="#">
-            Harkiv
-          </a>
-        </li>
-        <li className="modal__list-item">
-          <a className="modal__list-link" href="#">
-            Summy
-          </a>
-        </li>
-        <li className="modal__list-item">
-          <a className="modal__list-link" href="#">
-            Lviv
-          </a>
-        </li>
-        <li className="modal__list-item">
-          <a className="modal__list-link" href="#">
-            Dnipro
-          </a>
-        </li>
+        {city.map((c) => (
+          <li key={shortid.generate()} className="modal__list-item">
+            {
+              <NavLink
+                onClick={getCurrentCity}
+                className="modal__list-link"
+                to={c}
+              >
+                {c}
+              </NavLink>
+            }
+          </li>
+        ))}
       </ul>
     </div>
   );

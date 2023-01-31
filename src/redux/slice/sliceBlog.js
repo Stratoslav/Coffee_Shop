@@ -1,6 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { likeCount: 0, redLike: false };
+const likes =
+  localStorage.getItem("likesCount") !== null
+    ? JSON.parse(localStorage.getItem("likesCount"))
+    : 0;
+const isRedLike =
+  localStorage.getItem("redLike") !== null
+    ? JSON.parse(localStorage.getItem("redLike"))
+    : false;
+
+const initialState = { likeCount: likes, redLike: isRedLike };
 
 const blogSlice = createSlice({
   name: "blog",
@@ -13,6 +22,8 @@ const blogSlice = createSlice({
       } else {
         state.likeCount -= 1;
       }
+      localStorage.setItem("likesCount", JSON.stringify(state.likeCount));
+      localStorage.setItem("redLike", JSON.stringify(state.redLike));
     },
   },
 });

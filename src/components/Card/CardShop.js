@@ -25,7 +25,16 @@ const CardShop = () => {
             <p className="cardShop__price">30 $</p>
           </div>
           <div>
-            <input disabled type="" onClick={addMountOfCoffee} />
+            <label for="input-number-mod">
+              Modified Spin-Buttons (just Chrome)
+            </label>
+            <input
+              id="input-number-mod"
+              class="mod"
+              type="number"
+              min="0"
+              step={1}
+            />
 
             <button
               className="cardShop__button"

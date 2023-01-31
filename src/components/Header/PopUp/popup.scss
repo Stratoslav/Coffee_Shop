@@ -12,9 +12,9 @@
     &::before {
         content: url("../../../img/header/towards.png");
         position: absolute;
-        top: -20px;
+
         top: -11px;
-        left: 8px;
+        left: 20px;
         filter: invert(100%) sepia(0) saturate(0%) hue-rotate(0) brightness(1180) contrast(119%);
     }
     &__list-link {

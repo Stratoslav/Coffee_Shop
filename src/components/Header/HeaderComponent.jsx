@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "../Header/header.scss";
 import "../Main/main.scss";
@@ -11,24 +11,32 @@ import { contactActions } from "../../redux/slice/sliceContacts";
 
 const HeaderComponent = () => {
   const cart = useSelector((state) => state.cardShopReducer.card);
-  const { modalCity, modalRestaurant } = useSelector(
+  const { modalCity, modalRestaurant, currentCity } = useSelector(
     (state) => state.popUpReducer
   );
   const { contactPopUp } = useSelector((s) => s.contactReducer);
+
   const dispatch = useDispatch();
 
+  function ChangeCityPage() {
+    dispatch(popUpAction.openToogleModal());
+  }
+
+  useEffect(() => {
+    ChangeCityPage();
+  }, []);
   return (
     <>
       <header className="header">
         <div className="header__inner-left">
           <span className="city">
             <a
-              onClick={() => dispatch(popUpAction.openToogleModal())}
+              onClick={ChangeCityPage}
               className="city__link city__js"
-              href="#f"
+              href="#city"
               data-action="open-modal"
             >
-              Kyiv
+              {currentCity}
             </a>
           </span>
           {modalCity && <PopUpCity />}
@@ -80,7 +88,7 @@ const HeaderComponent = () => {
             <li className="menu__list-item ">
               <a
                 onClick={() => dispatch(contactActions.openOrCloseModal())}
-                href="#"
+                href="#contacts"
                 className="menu__list-link"
               >
                 contact

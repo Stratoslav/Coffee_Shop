@@ -13,9 +13,8 @@
   align-items: center;
   &__inner-left,
   &__inner-right {
-    width: 200px;
+    width: 233px;
     text-align: center;
-    // margin: 0 20px;
   }
 }
 .fixed {
@@ -143,6 +142,6 @@
 
 .disabled {
   pointer-events: none;
-  width: 200px;
+  width: 233px;
   text-align: center;
 }
