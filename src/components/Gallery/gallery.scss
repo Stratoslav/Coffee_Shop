@@ -1,0 +1,16 @@
+.gallery {
+    height: 1080px;
+    margin: 0 auto;
+    border-bottom: 1px solid #717171;
+
+    &__container {
+        display: flex;
+        justify-content: center;
+    }
+    &__img {
+        max-width: 1170px;
+        width: 100%;
+        height: auto;
+        padding-top: 100px;
+    }
+}

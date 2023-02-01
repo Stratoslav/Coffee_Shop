@@ -1,0 +1,147 @@
+.header {
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  height: auto;
+  z-index: 100;
+  margin: 0 auto;
+  background-color: #000000;
+
+  border-bottom: 1px solid #717171;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  &__inner-left,
+  &__inner-right {
+    width: 233px;
+    text-align: center;
+  }
+}
+.fixed {
+  position: fixed;
+}
+.menu {
+  box-sizing: border-box;
+  max-width: 900px;
+  width: 100%;
+  font-size: 20px;
+  padding: 0;
+
+  &__logo::before {
+    content: url(../../img/header/logo-min.png);
+  }
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    list-style: none;
+    align-items: center;
+    padding: 5px 0;
+  }
+}
+.logo {
+  width: auto;
+  height: 70px;
+  src: url("https://cdn.worldvectorlogo.com/logos/devil68-svg.svg");
+}
+.main {
+  text-align: right;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding-bottom: 100px;
+  &__title {
+    width: 770px;
+    padding-top: 170px;
+    font-size: 48px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 100px;
+
+    color: rgb(0, 0, 0);
+    &-sell {
+      font-size: 53px;
+      width: 300px;
+      text-align: right;
+      position: relative;
+      left: 68.5%;
+    }
+    &-pay {
+      color: #ffc901;
+    }
+  }
+  &__text {
+    font-size: 38px;
+    margin-bottom: 100px;
+    &-link {
+      color: #ffc901;
+    }
+  }
+  &__logo {
+    margin-bottom: 210px;
+    &::before {
+      content: url(../../img/header/logo-min.png);
+      filter: invert(100%) sepia(0) saturate(0%) hue-rotate(0) brightness(1180) contrast(119%);
+    }
+  }
+}
+
+.city,
+.restaurant {
+  padding: 0 20px;
+
+  &::after {
+    filter: invert(80%) sepia(41%) saturate(1376%) hue-rotate(353deg) brightness(98%) contrast(108%);
+    content: url("../../img/header/arrow.png");
+
+    position: absolute;
+  }
+}
+// .card {
+//   // padding: 0 15px;
+//   // margin-left: 30px;
+//   &::before {
+//     content: url("../../img/header/shopping-basket.png");
+//     position: absolute;
+//     transform: translate(-35px, -10px);
+//     filter: invert(80%) sepia(41%) saturate(1376%) hue-rotate(353deg) brightness(98%) contrast(108%);
+//   }
+// }
+.card {
+  cursor: pointer;
+  & > span:nth-child(1) {
+    font-size: 2rem;
+    content: url("../../img/header/shopping-basket.png");
+    filter: invert(80%) sepia(41%) saturate(0) hue-rotate(347deg) brightness(101%) contrast(129%);
+  }
+  & > span:nth-child(2) {
+    padding: 0 5px;
+    background-color: rgb(255, 0, 0);
+    font-weight: bold;
+    border-radius: 4px;
+    position: relative;
+    top: -16px;
+  }
+}
+
+.searchForm {
+  margin: 0 15px;
+  border: 1px solid #ffc901;
+  background-color: inherit;
+  height: 40px;
+  width: 250px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 100;
+  border-radius: 6px;
+  padding: 15px;
+  &::placeholder {
+    color: rgb(136, 136, 136);
+    font-weight: 100;
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  width: 233px;
+  text-align: center;
+}

@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "./static/css/main.fb93a8cf.css",
+    "main.js": "./static/js/main.1039c8a4.js",
+    "static/css/680.595acff7.chunk.css": "./static/css/680.595acff7.chunk.css",
+    "static/js/680.d1de2ce5.chunk.js": "./static/js/680.d1de2ce5.chunk.js",
+    "static/css/616.4242c84f.chunk.css": "./static/css/616.4242c84f.chunk.css",
+    "static/js/616.eb13af6c.chunk.js": "./static/js/616.eb13af6c.chunk.js",
+    "static/media/background.jpg": "./static/media/background.e4d86913835f89804ee4.jpg",
+    "static/media/gallery.png": "./static/media/gallery.36618a0edc48445a31f2.png",
+    "static/media/about-back.png": "./static/media/about-back.855621b4f098a0fe268d.png",
+    "static/media/Place Your Design Here(Double Click to Edit).png": "./static/media/Place Your Design Here(Double Click to Edit).6ffa5cec9637c1bf870d.png",
+    "index.html": "./index.html",
+    "main.fb93a8cf.css.map": "./static/css/main.fb93a8cf.css.map",
+    "main.1039c8a4.js.map": "./static/js/main.1039c8a4.js.map",
+    "680.595acff7.chunk.css.map": "./static/css/680.595acff7.chunk.css.map",
+    "680.d1de2ce5.chunk.js.map": "./static/js/680.d1de2ce5.chunk.js.map",
+    "616.4242c84f.chunk.css.map": "./static/css/616.4242c84f.chunk.css.map",
+    "616.eb13af6c.chunk.js.map": "./static/js/616.eb13af6c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fb93a8cf.css",
+    "static/js/main.1039c8a4.js"
+  ]
+}

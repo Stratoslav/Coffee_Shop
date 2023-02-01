@@ -1,0 +1,67 @@
+.coffee {
+    padding: 150px 0;
+    max-width: 1170px;
+    width: 100%;
+    margin: 0 auto;
+    &__link {
+        color: black;
+        &:hover {
+            color: black;
+        }
+    }
+    &__title {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 45px;
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &-item {
+            width: 300px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        &-img {
+            border-radius: 6px;
+            width: 300px;
+        }
+        &-title {
+            font-size: 30px;
+            margin: 10px 0;
+        }
+        &-text {
+            margin-bottom: 10px;
+            padding: 0 10px;
+        }
+    }
+    &__share {
+        cursor: pointer;
+        font-size: 20px;
+        padding-top: 95px;
+        box-shadow: 0 0 9px 1px;
+        position: fixed;
+        border-bottom: 1px solid;
+        background-image: linear-gradient(to bottom right, red, yellow);
+        & > strong {
+            padding-left: 50px;
+        }
+    }
+}
+
+.toggle__button {
+    text-align: center;
+    padding: 7px 10px;
+    font-size: 16px;
+    color: back;
+    background-color: #ffc901;
+    line-height: 1;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    &:hover {
+        background-color: #ffdf6c;
+    }
+}

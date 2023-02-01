@@ -1,0 +1,26 @@
+.coffee__list {
+    &-button {
+        width: auto;
+        min-width: 40px;
+        margin-top: 15px;
+
+        background-color: inherit;
+        color: rgb(0, 0, 0);
+        font-size: 16px;
+
+        border: 1px solid #000000;
+        cursor: pointer;
+        padding: 10px 20px;
+        border-radius: 6px;
+        transition: all 0.2s linear;
+
+        &:hover {
+            color: #fac400;
+            border: 1px solid #ffc901;
+        }
+    }
+    &-price {
+        border-top: 1px solid;
+        padding-top: 10px;
+    }
+}

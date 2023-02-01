@@ -1,0 +1,108 @@
+.booking {
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 1px solid #717171;
+    &__container {
+        max-width: 1100px;
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    &__title {
+        font-size: 55px;
+        font-weight: 400;
+        margin-bottom: 90px;
+        padding-top: 75px;
+    }
+    &__text {
+        font-size: 38px;
+        font-weight: 400;
+        margin-bottom: 90px;
+    }
+    &__form {
+        max-width: 1080px;
+        width: 100%;
+        margin: 0 auto;
+        padding-bottom: 90px;
+        & > div {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        &-wrap {
+            text-align: left;
+        }
+
+        &-input {
+            margin: 20px 0 75px;
+            border: 1px solid #ffc901;
+            background-color: inherit;
+
+            height: 55px;
+            width: 415px;
+            color: #000;
+            font-size: 19px;
+            font-weight: 100;
+            border-radius: 6px;
+            padding: 15px;
+            &::placeholder {
+                color: rgb(136, 136, 136);
+                font-weight: 100;
+                &:ty("date") {
+                    color: #000;
+                }
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &-button {
+            margin-top: 90px;
+            text-align: center;
+            padding: 20px 120px;
+            font-size: 38px;
+            color: back;
+            background-color: #ffc901;
+            line-height: 1;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    }
+}
+
+::-webkit-calendar-picker-indicator {
+    background-color: #ffc901;
+    color: #ffc901;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.errors__text {
+    position: absolute;
+    transform: translate3d(5px, -65px, 0);
+    color: red;
+    border-bottom: 1px solid red;
+}
+.input__error {
+    margin: 20px 0 75px;
+    box-shadow: 0px 0px 6px #f00;
+    border: 1px solid #ff0000;
+    background-color: inherit;
+    height: 55px;
+    width: 415px;
+    color: #fff;
+    font-size: 19px;
+    font-weight: 100;
+    border-radius: 6px;
+    padding: 15px;
+    &::placeholder {
+        color: azure;
+        font-weight: 100;
+    }
+}
+button::disabled {
+    opacity: 0.4;
+}

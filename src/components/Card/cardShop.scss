@@ -1,0 +1,85 @@
+.cardShop {
+    width: 1170px;
+    margin: 0 auto;
+    padding: 150px 0;
+
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        padding-bottom: 100px;
+    }
+    &__data {
+        width: 40%;
+    }
+    &__button {
+        width: auto;
+        min-width: 40px;
+        margin: 0 10px;
+        background-color: inherit;
+        color: rgb(0, 0, 0);
+        font-size: 36px;
+        border: 1px solid #ffc901;
+        cursor: pointer;
+        padding: 10px 20px;
+        border-radius: 6px;
+        transition: all 0.2s linear;
+
+        &:hover {
+            color: #fac400;
+        }
+    }
+    &__title {
+        margin: 15px 0;
+        font-size: 24px;
+    }
+    &__text {
+        margin-bottom: 15px;
+    }
+    &__price {
+        font-size: 20px;
+    }
+}
+
+/* General Styles */
+
+label {
+    display: block;
+    font-size: 0.8rem;
+}
+
+input[type="number"] {
+    position: relative;
+    margin: 0 0 1rem;
+    border: 1px solid #bbb;
+    border-color: #bbb #ececec #ececec #bbb;
+    padding: 0.2rem;
+}
+
+/* Spin Buttons modified */
+input[type="number"].mod::-webkit-outer-spin-button,
+input[type="number"].mod::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    background: #fff
+        url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAKUlEQVQYlWNgwAT/sYhhKPiPT+F/LJgEsHv37v+EMGkmkuImoh2NoQAANlcun/q4OoYAAAAASUVORK5CYII=)
+        no-repeat center center;
+    width: 1em;
+    border-left: 1px solid #bbb;
+    opacity: 0.5; /* shows Spin Buttons per default (Chrome >= 39) */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+input[type="number"].mod::-webkit-inner-spin-button:hover,
+input[type="number"].mod::-webkit-inner-spin-button:active {
+    box-shadow: 0 0 2px #0cf;
+    opacity: 0.8;
+}
+
+/* Override browser form filling */
+input:-webkit-autofill {
+    background: black;
+    color: red;
+}

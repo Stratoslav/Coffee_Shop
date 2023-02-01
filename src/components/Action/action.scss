@@ -1,0 +1,47 @@
+.action {
+    max-width: 1440px;
+    width: 100%;
+    border-bottom: 1px solid #717171;
+    margin: 0 auto;
+    background-position: center;
+
+    background-repeat: repeat;
+    padding: 250px 0 370px;
+    position: relative;
+    margin-top: -2px;
+    &::before {
+        top: 0;
+        left: 60px;
+        position: absolute;
+        content: url("../../img/about/Place\ Your\ Design\ Here\(Double\ Click\ to\ Edit\).png");
+        background-repeat: no-repeat;
+    }
+    &__container {
+        text-align: center;
+        width: 770px;
+        margin-left: inherit;
+        padding-right: 70px;
+        align-items: center;
+    }
+    &__title {
+        font-size: 55px;
+        font-weight: 400;
+        margin-bottom: 120px;
+    }
+    &__text {
+        font-size: 25px;
+        margin-bottom: 100px;
+    }
+    &__subtitle {
+        font-size: 64px;
+        font-weight: 100;
+        margin-bottom: 30px;
+        width: 585px;
+        margin: 0 auto;
+    }
+    &__discount {
+        color: #ffc901;
+        font-size: 36px;
+        font-weight: 100;
+    }
+}
