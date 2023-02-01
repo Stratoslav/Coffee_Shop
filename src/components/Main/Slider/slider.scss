@@ -32,3 +32,12 @@
 .swiper-pagination-bullet-active {
     color: #000;
 }
+.swiper-button-next,
+.swiper-button-prev {
+    border-radius: 4px;
+    transition: all 0.1s linear;
+    &:hover {
+        background-color: inherit;
+        color: #000;
+    }
+}

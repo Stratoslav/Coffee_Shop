@@ -84,10 +84,6 @@ const HeaderComponent = () => {
               <a href="#booking" className="menu__list-link">
                 Booking
               </a>
-              <NavLink to="/" className="menu__list-link">
-                Booking
-              </NavLink>
-              d
             </li>
             <li className="menu__list-item ">
               <a

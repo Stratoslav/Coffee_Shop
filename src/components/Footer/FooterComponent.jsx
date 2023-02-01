@@ -2,28 +2,31 @@ import React from "react";
 import "../Footer/footer.scss";
 import shortid from "shortid";
 import socialIcon from "./Social.json";
+import { NavLink } from "react-router-dom";
 export const FooterComponent = () => {
   return (
     <footer className="footer">
       <div className="footer__logo logo"></div>
       <ul className="footer__list">
         <li className="footer__list-item">
-          <a className="footer__list-link">About us</a>
+          <NavLink to="/menu" className="footer__list-link">
+            MENU
+          </NavLink>
         </li>
         <li className="footer__list-item">
-          <a className="footer__list-link">MENU</a>
+          <a href="#booking" className="footer__list-link">
+            BOOKINGS
+          </a>
         </li>
         <li className="footer__list-item">
-          <a className="footer__list-link">BOOKINGS</a>
+          <NavLink to="/gallery" className="footer__list-link">
+            GALLERY
+          </NavLink>
         </li>
         <li className="footer__list-item">
-          <a className="footer__list-link">GALLERY</a>
-        </li>
-        <li className="footer__list-item">
-          <a className="footer__list-link">CONTACT</a>
-        </li>
-        <li className="footer__list-item">
-          <a className="footer__list-link">BLOG</a>
+          <NavLink to="/blog" className="footer__list-link">
+            BLOG
+          </NavLink>
         </li>
       </ul>
       <ul className="footer__list icon">
