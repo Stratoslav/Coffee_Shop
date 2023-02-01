@@ -15,30 +15,3 @@ root.render(
     </BrowserRouter>
   </React.StrictMode>
 );
-<<<<<<< HEAD
-
-// # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-// # dependencies
-// /node_modules
-// /.pnp
-// .pnp.js
-
-// # testing
-// /coverage
-
-// # production
-// /build
-
-// # misc
-// .DS_Store
-// .env.local
-// .env.development.local
-// .env.test.local
-// .env.production.local
-
-// npm-debug.log*
-// yarn-debug.log*
-// yarn-error.log*
-=======
->>>>>>> f13c137d2465f06ef1bdd3644e6704b0fb52dddd

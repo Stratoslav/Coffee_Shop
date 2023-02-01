@@ -11,10 +11,9 @@ import { Booking } from "./components/Booking/Booking";
 import { Blog } from "./components/Blog/Blog.tsx";
 
 import { useSelector } from "react-redux";
-<<<<<<< HEAD
+
 import { NotFound } from "./components/NotFound/NotFound";
-=======
->>>>>>> f13c137d2465f06ef1bdd3644e6704b0fb52dddd
+
 const CardShop = lazy(() => import("./components/Card/CardShop"));
 const Menu = lazy(() => import("./components/Menu/Menu"));
 
@@ -43,10 +42,8 @@ function App() {
             <Route path="blog" element={<Blog />} />
 
             <Route path="*" element={<Navigate to="/Kyiv" />} />
-<<<<<<< HEAD
+
             <Route path="/not-found" element={<NotFound />} />
-=======
->>>>>>> f13c137d2465f06ef1bdd3644e6704b0fb52dddd
           </Routes>
         </Suspense>
       </div>

@@ -1,8 +1,7 @@
 import React from "react";
-<<<<<<< HEAD
+
 import { NavLink } from "react-router-dom";
-=======
->>>>>>> f13c137d2465f06ef1bdd3644e6704b0fb52dddd
+
 import { useGetHotCoffQuery, useGetIcedCoffeeQuery } from "../../api/coffeeApi";
 
 import { Card } from "../Card/Card";
@@ -15,7 +14,6 @@ export const MenuComponent = ({ changeTypeOfCoffee, isHotCoffee }) => {
 
   return (
     <>
-<<<<<<< HEAD
       <NavLink className="coffee__link" to="/not-found">
         <marquee className="coffee__share">
           ONLY THIS WEEK! COFFEE PROMOTION -40%
@@ -23,8 +21,6 @@ export const MenuComponent = ({ changeTypeOfCoffee, isHotCoffee }) => {
         </marquee>
       </NavLink>
 
-=======
->>>>>>> f13c137d2465f06ef1bdd3644e6704b0fb52dddd
       <section className="coffee">
         <button className="toggle__button button" onClick={changeTypeOfCoffee}>
           See {isHotCoffee} coffees
