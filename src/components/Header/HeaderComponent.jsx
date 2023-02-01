@@ -81,9 +81,15 @@ const HeaderComponent = () => {
             </li>
 
             <li className="menu__list-item">
+<<<<<<< HEAD
               <a href="#booking" className="menu__list-link">
                 Booking
               </a>
+=======
+              <NavLink to="/" className="menu__list-link">
+                Booking
+              </NavLink>
+>>>>>>> f13c137d2465f06ef1bdd3644e6704b0fb52dddd
             </li>
             <li className="menu__list-item ">
               <a
