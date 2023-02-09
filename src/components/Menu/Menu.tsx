@@ -3,7 +3,7 @@ import axios from "axios";
 import "./menu.scss";
 import { MenuComponent } from "./MenuComponent";
 
-const Menu = ({ handleClick }) => {
+const Menu = () => {
   let [isHotCoffee, setIsHotCoffee] = useState("Hot");
 
   const changeTypeOfCoffee = () => {
@@ -15,7 +15,6 @@ const Menu = ({ handleClick }) => {
       <MenuComponent
         changeTypeOfCoffee={changeTypeOfCoffee}
         isHotCoffee={isHotCoffee}
-        handleClick={handleClick}
       />
     </>
   );

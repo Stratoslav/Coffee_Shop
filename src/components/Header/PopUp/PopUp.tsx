@@ -6,7 +6,7 @@ import "../PopUp/popup.scss";
 import shortid from "shortid";
 
 export const PopUpCity = () => {
-  const city = useSelector((s) => s.popUpReducer.city);
+  const city = useSelector((s: any) => s.popUpReducer.city);
   const dispatch = useDispatch();
   const getCurrentCity = (e) => {
     dispatch(popUpAction.ChooseCurrentCity(e.target.innerHTML));

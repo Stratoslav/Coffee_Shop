@@ -7,7 +7,7 @@ import { Action } from "../Action/Action";
 import { GalleryComponent } from "../Gallery/GalleryComponent";
 import { Booking } from "../Booking/Booking";
 import { Contacts } from "../Contacts/Contacts";
-import { Slider } from "./Slider/Slider";
+import { Slider } from "./Slider/Slider.tsx";
 
 const MainComponent = () => {
   return (
@@ -20,8 +20,6 @@ const MainComponent = () => {
           <Slider />
         </div>
         <main className="main">
-          {/* <p className="main__text"></p>
-          <div className="main__logo logo"></div> */}
           <h2 className="main__title-sell">
             book your table <span className="main__title-pay">NOW</span>
           </h2>

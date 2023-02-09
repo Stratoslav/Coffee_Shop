@@ -10,10 +10,15 @@ import "./slider.scss";
 import "swiper/css/pagination";
 import "../../Header/header.scss";
 import { NavLink } from "react-router-dom";
-
+interface Coffee {
+  title: string;
+  description: string;
+  ingredients?: string[];
+  image: string;
+  id: number;
+}
 export const Slider = () => {
-  const swiper = useSwiper();
-  let [hotCoffee, setHotCoffee] = useState([]);
+  let [hotCoffee, setHotCoffee] = useState<Coffee[]>([]);
   const getIcedCoffee = async () => {
     const response = await axios
       .get(`https://api.sampleapis.com/coffee/hot`)

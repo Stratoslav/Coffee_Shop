@@ -23,7 +23,6 @@ export const NotFound = () => {
           <NavLink to="/menu" className="yes">
             YES
           </NavLink>
-          <NavLink className="noy">NO</NavLink>
         </div>
       </section>
     </body>

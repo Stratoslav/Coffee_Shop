@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "../Header/header.scss";
 import "../Main/main.scss";
-import { PopUpCity, PopUpRestaurant } from "./PopUp/PopUp";
+import { PopUpCity, PopUpRestaurant } from "./PopUp/PopUp.tsx";
 import { Link, NavLink } from "react-router-dom";
 import { popUpAction } from "../../redux/slice/slicePopUp";
 import { navigationAction } from "../../redux/slice/sliceNavigation";

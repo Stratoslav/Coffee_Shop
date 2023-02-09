@@ -12,10 +12,10 @@ import { Blog } from "./components/Blog/Blog.tsx";
 
 import { useSelector } from "react-redux";
 
-import { NotFound } from "./components/NotFound/NotFound";
+import { NotFound } from "./components/NotFound/NotFound.tsx";
 
 const CardShop = lazy(() => import("./components/Card/CardShop"));
-const Menu = lazy(() => import("./components/Menu/Menu"));
+const Menu = lazy(() => import("./components/Menu/Menu.tsx"));
 
 function App() {
   const isShowComponent = useSelector(
