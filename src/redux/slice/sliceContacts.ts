@@ -6,7 +6,7 @@ const contactSlice = createSlice({
   name: "contactSlice",
   initialState,
   reducers: {
-    openOrCloseModal(state, action) {
+    openOrCloseModal(state) {
       state.contactPopUp = !state.contactPopUp;
     },
   },

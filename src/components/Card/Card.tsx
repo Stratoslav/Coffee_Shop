@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { CardShopAction } from "../../redux/slice/sliceCardShop";
+import { CardShopAction, CardTypes } from "../../redux/slice/sliceCardShop";
 import "../Card/card.scss";
-
-export const Card = ({ item }) => {
+type Item = {
+  item: CardTypes
+}
+export const Card = ({ item }: Item) => {
   const [click, setClick] = useState(false);
   const { id, image, title, description, ingredients } = item;
-  console.log(...ingredients);
+
 
   const dispatch = useDispatch();
 

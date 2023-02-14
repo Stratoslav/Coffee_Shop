@@ -1,22 +1,23 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import "../Header/header.scss";
 import "../Main/main.scss";
-import { PopUpCity, PopUpRestaurant } from "./PopUp/PopUp.tsx";
+import { PopUpCity, PopUpRestaurant } from "./PopUp/PopUp";
 import { Link, NavLink } from "react-router-dom";
 import { popUpAction } from "../../redux/slice/slicePopUp";
 import { navigationAction } from "../../redux/slice/sliceNavigation";
 import { PopUpContacts } from "../Contacts/PoPuContacts";
 import { contactActions } from "../../redux/slice/sliceContacts";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 
 const HeaderComponent = () => {
   const cart = useSelector((state) => state.cardShopReducer.card);
-  const { modalCity, modalRestaurant, currentCity } = useSelector(
+  const { modalCity, modalRestaurant, currentCity } = useAppSelector(
     (state) => state.popUpReducer
   );
-  const { contactPopUp } = useSelector((s) => s.contactReducer);
+  const { contactPopUp } = useAppSelector((s) => s.contactReducer);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   function ChangeCityPage() {
     dispatch(popUpAction.openToogleModal());
@@ -24,7 +25,7 @@ const HeaderComponent = () => {
 
   useEffect(() => {
     ChangeCityPage();
-  }, []);
+  });
   return (
     <>
       <header className="header">

@@ -1,9 +1,17 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 const current =
   localStorage.getItem("currentCity") !== null
     ? JSON.parse(localStorage.getItem("currentCity"))
     : "Kyiv";
-let initialState = {
+
+type PopUpTypes = {
+  modalCity: boolean,
+  modalRestaurant: boolean,
+  city: string[],
+  currentCity: string
+    }
+
+let initialState: PopUpTypes = {
   modalCity: false,
   modalRestaurant: false,
   city: ["Mykolaiv", "Harkiv", "Summy", "Lviv", "Dnipro", "Kyiv"],
@@ -14,16 +22,16 @@ const PopUpSlice = createSlice({
   name: "PopUp",
   initialState,
   reducers: {
-    openToogleModal(state, action) {
+    openToogleModal(state) {
       state.modalCity = !state.modalCity;
       state.modalRestaurant = false;
     },
 
-    popUpRestaurant(state, action) {
+    popUpRestaurant(state) {
       state.modalRestaurant = !state.modalRestaurant;
       state.modalCity = false;
     },
-    ChooseCurrentCity(state, action) {
+    ChooseCurrentCity(state, action: PayloadAction<string>) {
       state.currentCity = action.payload;
       localStorage.setItem("currentCity", JSON.stringify(state.currentCity));
     },

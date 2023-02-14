@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { useAppSelector } from "../../redux/hooks";
 import { CardShopAction } from "../../redux/slice/sliceCardShop";
 
 import "../Card/cardShop.scss";
@@ -8,12 +9,12 @@ const CardShop = () => {
   const dispatch = useDispatch();
 
   const addMountOfCoffee = (e) => {
-    console.log(e);
+
     if (Number(e.target.value) <= 0) {
       return (e.target.value = 0);
     }
   };
-  const cart = useSelector((state) => state.cardShopReducer.card);
+  const cart = useAppSelector((state) => state.cardShopReducer.card);
   return (
     <ul className="cardShop">
       {cart.map(({ id, image, title, description }) => (
@@ -25,12 +26,12 @@ const CardShop = () => {
             <p className="cardShop__price">30 $</p>
           </div>
           <div>
-            <label for="input-number-mod">
+            <label htmlFor="input-number-mod">
               Modified Spin-Buttons (just Chrome)
             </label>
             <input
               id="input-number-mod"
-              class="mod"
+              className="mod"
               type="number"
               min="0"
               step={1}

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { blogAction } from "../../redux/slice/sliceBlog";
 
 import { Footer } from "../Footer/Footer";
 import "./blog.scss";
 
 export const Blog = () => {
-  const dispatch = useDispatch();
-  const { likeCount, redLike } = useSelector((state: any) => state.blogReducer);
+  const dispatch = useAppDispatch();
+  const { likeCount, redLike } = useAppSelector((state: any) => state.blogReducer);
 
   const handleClick = (e) => {
     dispatch(blogAction.handleLikeCount(e.target.value));

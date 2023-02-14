@@ -7,7 +7,7 @@ import { Action } from "../Action/Action";
 import { GalleryComponent } from "../Gallery/GalleryComponent";
 import { Booking } from "../Booking/Booking";
 import { Contacts } from "../Contacts/Contacts";
-import { Slider } from "./Slider/Slider.tsx";
+import { Slider } from "./Slider/Slider";
 
 const MainComponent = () => {
   return (

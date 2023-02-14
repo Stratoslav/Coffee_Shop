@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from './../store';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const likes =
   localStorage.getItem("likesCount") !== null
@@ -6,16 +7,20 @@ const likes =
     : 0;
 const isRedLike =
   localStorage.getItem("redLike") !== null
-    ? JSON.parse(localStorage.getItem("redLike"))
+    ? JSON.parse(localStorage.getItem("redLike")) 
     : false;
 
-const initialState = { likeCount: likes, redLike: isRedLike };
+type BlogTypes = {
+  likeCount: number,
+  redLike: boolean
+    }
+const initialState: BlogTypes = { likeCount: likes, redLike: isRedLike };
 
 const blogSlice = createSlice({
   name: "blog",
   initialState: initialState,
   reducers: {
-    handleLikeCount(state, action) {
+    handleLikeCount(state, action: PayloadAction<number>) {
       state.redLike = !state.redLike;
       if (state.redLike) {
         state.likeCount = action.payload += 1;

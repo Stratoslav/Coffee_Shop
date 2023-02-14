@@ -1,15 +1,17 @@
-import React from "react";
+import React, { HTMLAttributeAnchorTarget } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { popUpAction } from "../../../redux/slice/slicePopUp";
 import "../PopUp/popup.scss";
 import shortid from "shortid";
+import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
+import { MouseEventHandler } from "react";
 
 export const PopUpCity = () => {
-  const city = useSelector((s: any) => s.popUpReducer.city);
-  const dispatch = useDispatch();
-  const getCurrentCity = (e) => {
-    dispatch(popUpAction.ChooseCurrentCity(e.target.innerHTML));
+  const city = useAppSelector((s) => s.popUpReducer.city);
+  const dispatch = useAppDispatch();
+  const getCurrentCity = (e:any ) => {
+    dispatch(popUpAction.ChooseCurrentCity(e.target!.innerHTML ));
   };
   return (
     <div className="modal modal__city">
