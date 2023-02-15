@@ -2,26 +2,27 @@ import "./App.scss";
 
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Header } from "./components/Header/Header";
-
+import { useFormik, FormikProps,FormikValues, FormikErrors } from "formik"
 import MainComponent from "./components/Main/Main";
 
-import { useState, lazy, Suspense } from "react";
+import {  lazy, Suspense } from "react";
 
 import { Booking } from "./components/Booking/Booking";
-import { Blog } from "./components/Blog/Blog.tsx";
+import { Blog } from "./components/Blog/Blog";
 
-import { useSelector } from "react-redux";
 
-import { NotFound } from "./components/NotFound/NotFound.tsx";
+
+import { NotFound } from "./components/NotFound/NotFound";
+import { useAppSelector } from "./redux/hooks";
 
 const CardShop = lazy(() => import("./components/Card/CardShop"));
-const Menu = lazy(() => import("./components/Menu/Menu.tsx"));
+const Menu = lazy(() => import("./components/Menu/Menu"));
 
 function App() {
-  const isShowComponent = useSelector(
+  const isShowComponent = useAppSelector(
     (state) => state.navigationReducer.isShowComponent
   );
-
+  let props 
   return (
     <div className="App">
       <Header />
@@ -34,7 +35,7 @@ function App() {
             <Route path="/Summy" element={<MainComponent />} />
             <Route path="/Dnipro" element={<MainComponent />} />
             <Route path="/Lviv" element={<MainComponent />} />
-            <Route path="registration" element={<Booking />} />
+            <Route path="registration" element={<Booking {...props as  FormikProps<FormikValues>}/> }/>
             <Route
               path="menu"
               element={isShowComponent === true ? <Menu /> : <CardShop />}

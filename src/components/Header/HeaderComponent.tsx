@@ -11,7 +11,7 @@ import { contactActions } from "../../redux/slice/sliceContacts";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 
 const HeaderComponent = () => {
-  const cart = useSelector((state) => state.cardShopReducer.card);
+  const cart = useAppSelector((state) => state.cardShopReducer.card);
   const { modalCity, modalRestaurant, currentCity } = useAppSelector(
     (state) => state.popUpReducer
   );
@@ -25,7 +25,7 @@ const HeaderComponent = () => {
 
   useEffect(() => {
     ChangeCityPage();
-  });
+  }, []);
   return (
     <>
       <header className="header">

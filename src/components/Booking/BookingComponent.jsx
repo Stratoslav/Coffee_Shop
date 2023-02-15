@@ -1,6 +1,5 @@
 import React from "react";
 import "../Booking/booking.scss";
-
 export const BookingComponent = ({ isErrorClass, isError, formik }) => {
   const { values, handleChange, isSubmitting, handleBlur, handleSubmit } =
     formik;
