@@ -35,7 +35,7 @@ function App() {
             <Route path="/Summy" element={<MainComponent />} />
             <Route path="/Dnipro" element={<MainComponent />} />
             <Route path="/Lviv" element={<MainComponent />} />
-            <Route path="registration" element={<Booking {...props as  FormikProps<FormikValues>}/> }/>
+            <Route path="registration" element={<Booking /> }/>
             <Route
               path="menu"
               element={isShowComponent === true ? <Menu /> : <CardShop />}
