@@ -5,7 +5,7 @@ import { popUpAction } from "../../../redux/slice/slicePopUp";
 import "../PopUp/popup.scss";
 import shortid from "shortid";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
-import { MouseEventHandler } from "react";
+
 
 export const PopUpCity = () => {
   const city = useAppSelector((s) => s.popUpReducer.city);
@@ -40,7 +40,7 @@ export const PopUpRestaurant = () => {
       <div className="modal modal__restaurant">
         <ul className="modal__list">
           <li className="modal__list-item">
-            <a className="modal__link" href="#">
+            <a className="modal__link" href="x`">
               вул. Оноре де Бальзака, 63
             </a>
           </li>

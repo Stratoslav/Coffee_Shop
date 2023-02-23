@@ -14,7 +14,7 @@ type PopUpTypes = {
 let initialState: PopUpTypes = {
   modalCity: false,
   modalRestaurant: false,
-  city: ["Mykolaiv", "Harkiv", "Summy", "Lviv", "Dnipro", "Kyiv"],
+  city: ["Herson", "Harkiv", "Summy", "Lviv", "Dnipro", "Kyiv"],
   currentCity: current,
 };
 

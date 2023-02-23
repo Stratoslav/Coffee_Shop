@@ -30,7 +30,7 @@ function App() {
         <Suspense>
           <Routes>
             <Route path="/Kyiv" element={<MainComponent />} />
-            <Route path="/Mykolaiv" element={<MainComponent />} />
+            <Route path="/Herson" element={<MainComponent />} />
             <Route path="/Harkiv" element={<MainComponent />} />
             <Route path="/Summy" element={<MainComponent />} />
             <Route path="/Dnipro" element={<MainComponent />} />
