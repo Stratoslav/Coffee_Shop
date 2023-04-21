@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+
 import "../Header/header.scss";
 import "../Main/main.scss";
 import { PopUpCity, PopUpRestaurant } from "./PopUp/PopUp";
@@ -25,6 +25,7 @@ const HeaderComponent = () => {
 
   useEffect(() => {
     ChangeCityPage();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <>

@@ -7,7 +7,7 @@ type Item = {
 }
 export const Card = ({ item }: Item) => {
   const [click, setClick] = useState(false);
-  const { id, image, title, description, ingredients } = item;
+  const { id, image, title, description } = item;
 
 
   const dispatch = useDispatch();

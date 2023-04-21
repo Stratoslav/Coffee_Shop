@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { useAppSelector } from "../../redux/hooks";
 import { CardShopAction } from "../../redux/slice/sliceCardShop";
@@ -8,12 +8,6 @@ import "../Card/cardShop.scss";
 const CardShop = () => {
   const dispatch = useDispatch();
 
-  const addMountOfCoffee = (e) => {
-
-    if (Number(e.target.value) <= 0) {
-      return (e.target.value = 0);
-    }
-  };
   const cart = useAppSelector((state) => state.cardShopReducer.card);
   return (
     <ul className="cardShop">

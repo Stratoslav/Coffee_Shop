@@ -1,5 +1,4 @@
-import React, { HTMLAttributeAnchorTarget } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { popUpAction } from "../../../redux/slice/slicePopUp";
 import "../PopUp/popup.scss";
@@ -45,22 +44,22 @@ export const PopUpRestaurant = () => {
             </a>
           </li>
           <li className="modal__list-item">
-            <a className="modal__list-link" href="#">
+            <a className="modal__list-link" href="/">
               Hвул. Вадима Гетьмана, 6, ТРЦ "COSMO MULTIMALL"
             </a>
           </li>
           <li className="modal__list-item">
-            <a className="modal__list-link" href="#">
+            <a className="modal__list-link" href="/">
               вул. Маршала Тимошенка, 21, корпус 3
             </a>
           </li>
           <li className="modal__list-item">
-            <a className="modal__list-link" href="#">
+            <a className="modal__list-link" href="/">
               вул. Велика Васильківська, 76
             </a>
           </li>
           <li className="modal__list-item">
-            <a className="modal__list-link" href="#">
+            <a className="modal__list-link" href="/">
               пр. Перемоги, 136
             </a>
           </li>

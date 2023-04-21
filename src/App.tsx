@@ -2,7 +2,6 @@ import "./App.scss";
 
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Header } from "./components/Header/Header";
-import { useFormik, FormikProps,FormikValues, FormikErrors } from "formik"
 import MainComponent from "./components/Main/Main";
 
 import {  lazy, Suspense } from "react";
@@ -22,7 +21,7 @@ function App() {
   const isShowComponent = useAppSelector(
     (state) => state.navigationReducer.isShowComponent
   );
-  let props 
+
   return (
     <div className="App">
       <Header />
