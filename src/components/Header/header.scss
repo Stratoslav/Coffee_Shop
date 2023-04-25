@@ -28,7 +28,8 @@
   padding: 0;
 
   &__logo::before {
-    content: url(../../img/header/logo-min.png);
+    // max-width: 30px;
+    // content: url(https://freesvg.org/img/johnny_automatic_cup_of_coffee.png);
   }
   &__list {
     display: flex;
@@ -42,7 +43,7 @@
 .logo {
   width: auto;
   height: 70px;
-  src: url("https://cdn.worldvectorlogo.com/logos/devil68-svg.svg");
+  src: url("https://freesvg.org/img/johnny_automatic_cup_of_coffee.png");
 }
 .main {
   text-align: right;

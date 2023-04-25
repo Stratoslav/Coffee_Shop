@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect , useState} from "react";
 
 import "../Header/header.scss";
 import "../Main/main.scss";
@@ -9,6 +9,7 @@ import { navigationAction } from "../../redux/slice/sliceNavigation";
 import { PopUpContacts } from "../Contacts/PoPuContacts";
 import { contactActions } from "../../redux/slice/sliceContacts";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { PopUpBooking } from "../Booking/PopUpBooking";
 
 const HeaderComponent = () => {
   const cart = useAppSelector((state) => state.cardShopReducer.card);
@@ -18,7 +19,7 @@ const HeaderComponent = () => {
   const { contactPopUp } = useAppSelector((s) => s.contactReducer);
 
   const dispatch = useAppDispatch();
-
+ const [ppUpBooking, setPopUpBooking] = useState(false)
   function ChangeCityPage() {
     dispatch(popUpAction.openToogleModal());
   }
@@ -79,13 +80,20 @@ const HeaderComponent = () => {
               </NavLink>
             </li>
             <li className="menu__list-item">
-              <span className="menu__logo logo"></span>
+              <span className="menu__logo logo">
+                <NavLink to='/'>
+                <img width={70} height={70} src="https://freesvg.org/img/johnny_automatic_cup_of_coffee.png" alt=""/>
+
+                </NavLink>
+              </span> 
             </li>
 
             <li className="menu__list-item">
-              <a href="#booking" className="menu__list-link">
+              {cart.length !== 0 ? <NavLink to="/registration" className="menu__list-link">
                 Booking
-              </a>
+              </NavLink> : (<div style={{
+                color: "white"}} onClick={() => setPopUpBooking(!ppUpBooking)} >Booking</div>)}
+               {ppUpBooking && <PopUpBooking />}
             </li>
             <li className="menu__list-item ">
               <a
