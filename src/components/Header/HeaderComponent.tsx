@@ -91,8 +91,7 @@ const HeaderComponent = () => {
             <li className="menu__list-item">
               {cart.length !== 0 ? <NavLink to="/registration" className="menu__list-link">
                 Booking
-              </NavLink> : (<div style={{
-                color: "white"}} onClick={() => setPopUpBooking(!ppUpBooking)} >Booking</div>)}
+              </NavLink> : (<a href="#registration" className="menu__list-link" onClick={() => setPopUpBooking(!ppUpBooking)} >Booking</a>)}
                {ppUpBooking && <PopUpBooking />}
             </li>
             <li className="menu__list-item ">

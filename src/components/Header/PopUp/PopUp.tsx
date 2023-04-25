@@ -39,7 +39,7 @@ export const PopUpRestaurant = () => {
       <div className="modal modal__restaurant">
         <ul className="modal__list">
           <li className="modal__list-item">
-            <a className="modal__link" href="x`">
+            <a className="modal__list-link" href="x`">
               вул. Оноре де Бальзака, 63
             </a>
           </li>

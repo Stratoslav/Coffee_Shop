@@ -37,7 +37,9 @@
 }
 .swiper-button-next,
 .swiper-button-prev {
-  border-radius: 4px;
+  height: 60px;
+  border-radius: 50%;
+  width: 60px;
   transition: all 0.1s linear;
   &:hover {
     background-color: inherit;

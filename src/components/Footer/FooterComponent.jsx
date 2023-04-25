@@ -6,7 +6,14 @@ import { NavLink } from "react-router-dom";
 export const FooterComponent = () => {
   return (
     <footer className="footer">
-      <div className="footer__logo logo"></div>
+      <div className="footer__logo logo">
+        <img
+          width={100}
+          height={100}
+          src="https://freesvg.org/img/johnny_automatic_cup_of_coffee.png"
+          alt=""
+        />
+      </div>
       <ul className="footer__list">
         <li className="footer__list-item">
           <NavLink to="/menu" className="footer__list-link">

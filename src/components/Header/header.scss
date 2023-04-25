@@ -149,3 +149,10 @@
   width: 233px;
   text-align: center;
 }
+
+@media (max-width: 1350px) {
+  .header__inner-left {
+    width: 190px;
+    text-align: left;
+  }
+}
