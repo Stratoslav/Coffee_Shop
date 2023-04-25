@@ -11,8 +11,18 @@ import "./menu.scss";
 export const MenuComponent = ({ changeTypeOfCoffee, isHotCoffee }) => {
   const info = useGetIcedCoffeeQuery();
 
-  const { data, isLoading } = useGetHotCoffQuery();
+  let { data, isLoading } = useGetHotCoffQuery();
+  if (data !== undefined) {
+    // console.log((data.length = 18));
+    // let arr = data.splice(6, 6);
+    // // data.length = 18;
+  }
 
+  // let spliceData;
+  // if (data) {
+  //   spliceData = data.splice(10, 10);
+  // }
+  // console.log(spliceData);
   return (
     <>
       <NavLink className="coffee__link" to="/not-found">

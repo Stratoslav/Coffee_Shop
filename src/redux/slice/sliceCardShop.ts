@@ -32,6 +32,10 @@ const cardShopSlice = createSlice({
     },
     handleClickCard(state, action: PayloadAction<CardTypes>) {
       state.card.push(action.payload);
+    
+    //   if (state.card.length > 17) {
+    //   state.card.pop()
+    // }
       localStorage.setItem("cartArr", JSON.stringify(state.card));
     },
     handleRemoveCard(state, action: PayloadAction<CardTypes['id']>) {

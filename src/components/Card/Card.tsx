@@ -9,7 +9,7 @@ export const Card = ({ item }: Item) => {
   const [click, setClick] = useState(false);
   const { id, image, title, description } = item;
 
-
+ console.log(item.id < 20)
   const dispatch = useDispatch();
 
   function clicked() {
@@ -17,7 +17,8 @@ export const Card = ({ item }: Item) => {
     setClick(true);
   }
   return (
-    <li className="coffee__list-item cards" key={id}>
+  <>
+    { item.id < 20 ? (<li className="coffee__list-item cards" key={id}>
       <div className="image__box">
         <img
           height={300}
@@ -31,9 +32,7 @@ export const Card = ({ item }: Item) => {
         <h3 className="coffee__list-title">{title}</h3>
         <p className="coffee__list-text">{description}</p>
         <p>ingredient:</p>
-        {/* {ingredients.map((ingredient) => (
-          <span className="coffee__list-text">{ingredient}</span>
-        ))} */}
+       
 
         <p className="coffee__list-price">30 $</p>
         <button
@@ -45,6 +44,7 @@ export const Card = ({ item }: Item) => {
           Add to Cart
         </button>
       </div>
-    </li>
+      </li>) : null}
+      </>
   );
 };

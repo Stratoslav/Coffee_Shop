@@ -9,6 +9,7 @@ const CardShop = () => {
   const dispatch = useDispatch();
 
   const cart = useAppSelector((state) => state.cardShopReducer.card);
+   
   return (
     <ul className="cardShop">
       {cart.map(({ id, image, title, description }) => (
