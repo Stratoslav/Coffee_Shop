@@ -10,6 +10,9 @@ const CardShop = () => {
 
   const cart = useAppSelector((state) => state.cardShopReducer.card);
    
+ 
+  
+  
   return (
     <ul className="cardShop">
       {cart.map(({ id, image, title, description }) => (
@@ -28,7 +31,7 @@ const CardShop = () => {
               id="input-number-mod"
               className="mod"
               type="number"
-              min="0"
+              min="1"
               step={1}
             />
 
@@ -38,6 +41,7 @@ const CardShop = () => {
             >
               Remove
             </button>
+           
           </div>
         </li>
       ))}

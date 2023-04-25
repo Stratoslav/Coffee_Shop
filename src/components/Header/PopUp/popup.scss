@@ -32,3 +32,9 @@
 .modal__restaurant {
   transform: translate(90px, 12px);
 }
+
+@media (max-width: 1350) {
+  .modal__city {
+    z-index: 100;
+  }
+}

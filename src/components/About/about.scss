@@ -1,50 +1,67 @@
 .about {
-    color: #fff;
-    &__container {
-        text-align: center;
-        width: 100%;
-        margin: 0 auto;
-        background-image: url(../../img/about/about-back.png);
-        height: auto;
-        background-repeat: no-repeat;
-        background-size: cover;
-        border-top: 1px solid #717171;
-        border-bottom: 1px solid #717171;
-        & > div {
-            max-width: 600px;
-            padding-left: 80px;
-            height: auto;
-            margin: 50px 245px 0;
-        }
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  background-image: url(../..//img/about/905439.jpg);
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top: 1px solid #717171;
+  overflow: hidden;
+  // color: #f70000
+  opacity: 0.9;
+  border-bottom: 1px solid #717171;
+  &__container {
+    background: rgba(0, 0, 0, 0.82);
+    overflow: hidden;
+    height: 100%;
+    z-index: 2;
+    & > div {
+      max-width: 1000px;
+      margin: 0 auto;
+      align-items: center;
+      padding-left: 80px;
+      height: auto;
+      margin-top: 100px;
+      //   margin: 50px 0 0;
     }
-    &__title {
-        padding-top: 25px;
-        margin-bottom: 100px;
-        font-size: 55px;
-        font-weight: 400;
-        transform: translate(-60px, 0);
+  }
 
-        margin-bottom: 90px;
-        &::after {
-            padding-left: 10px;
-            position: absolute;
-            content: url(../../img/header/logo-min.png);
-        }
+  &__title {
+    padding-top: 25px;
+    margin-bottom: 100px;
+    font-size: 55px;
+    font-weight: 400;
+    transform: translate(-15px, 0);
+
+    margin-bottom: 90px;
+    &-descr {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 130px;
     }
-    &__text {
-        width: 100%;
-        margin: 0 auto;
-        font-size: 21px;
-        font-weight: 100;
-        margin-bottom: 120px;
+    // &::after {
+    //     padding-left: 10px;
+    //     position: absolute;
+    //     content: url(../../img/header/logo-min.png);
+    // }
+  }
+  &__text {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 21px;
+    font-weight: 100;
+    margin-bottom: 120px;
+  }
+  &__offer {
+    font-size: 33px;
+    font-weight: 100;
+    padding-bottom: 207px;
+    & > strong {
+      color: #ffc901;
+      font-weight: 100;
     }
-    &__offer {
-        font-size: 33px;
-        font-weight: 100;
-        padding-bottom: 207px;
-        & > strong {
-            color: #ffc901;
-            font-weight: 100;
-        }
-    }
+  }
 }

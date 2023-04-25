@@ -1,17 +1,22 @@
 .contacts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
   &__container {
     margin: 0 auto;
     padding: 170px 0;
-    max-width: 1440px;
 
     position: relative;
     width: 100%;
+
     text-align: center;
     background-position: center;
     background-repeat: no-repeat;
     text-align: start;
     padding-left: 100px;
-    background-image: url("../../img/footer/Place\ Your\ Design\ Here\(Double\ Click\ to\ Edit\).png");
+    // background-image: url("../../img/footer/contacts-coffee.jpg");
   }
   &__title {
     text-align: center;
@@ -67,6 +72,7 @@
     top: -20px;
     top: -11px;
     left: 8px;
-    filter: invert(100%) sepia(0) saturate(0%) hue-rotate(0) brightness(1180) contrast(119%);
+    filter: invert(100%) sepia(0) saturate(0%) hue-rotate(0) brightness(1180)
+      contrast(119%);
   }
 }
