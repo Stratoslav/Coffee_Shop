@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-const current =
-  localStorage.getItem("currentCity") !== null
-    ? JSON.parse(localStorage.getItem("currentCity"))
-    : "Kyiv";
+  const current =
+    localStorage.getItem("currentCity") !== null
+      ? JSON.parse(localStorage.getItem("currentCity"))
+      : "Kyiv";
 
 type PopUpTypes = {
   modalCity: boolean,

@@ -33,8 +33,29 @@
   transform: translate(90px, 12px);
 }
 
-@media (max-width: 1350) {
+@media (max-width: 1366px) {
   .modal__city {
     z-index: 100;
+    transform: translate(45px, 10px);
+  }
+  .modal__restaurant {
+    transform: translate(80px, 12px);
+  }
+}
+
+@media (max-width: 962px) {
+  .city,
+  .restaurant {
+    padding-left: 10px;
+  }
+  .modal {
+    z-index: 100;
+  }
+}
+
+@media (max-width: 414px) {
+  .city__link,
+  .restaurant__link {
+    font-size: 14px;
   }
 }

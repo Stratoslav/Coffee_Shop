@@ -149,10 +149,95 @@
   width: 233px;
   text-align: center;
 }
-
-@media (max-width: 1350px) {
+.nav-menu {
+  display: none;
+}
+.hamburger {
+  display: none;
+}
+.phone__logo {
+  display: none;
+}
+@media (max-width: 1366px) {
   .header__inner-left {
     width: 190px;
     text-align: left;
+  }
+}
+
+@media (max-width: 962px) {
+  nav {
+    display: flex;
+  }
+  .header {
+    height: 60px;
+    justify-content: space-between;
+    &__inner-left {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    &__inner-right {
+      width: 115px;
+      justify-content: space-between;
+      align-items: center;
+      padding-right: 20px;
+    }
+  }
+  .menu {
+    display: none;
+  }
+
+  .nav-menu {
+    display: block;
+  }
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+  .bar {
+    display: block;
+    width: 25px;
+    height: 5px;
+    color: #ffc901;
+    background-color: #ffc901;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 57px;
+    gap: 0;
+
+    flex-direction: column;
+    background-color: #000000;
+    width: 100%;
+    text-align: center;
+    transition: linear 0.3s;
+  }
+  .nav-item {
+    margin: 16px 0;
+  }
+  .nav-link {
+    color: #ffffff;
+  }
+  .nav-menu.active {
+    border-top: 1px solid #ffc901;
+    left: 0;
+  }
+  .phone__logo {
+    display: block;
+    padding-left: 20px;
   }
 }

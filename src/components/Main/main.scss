@@ -1,23 +1,51 @@
 .main__container {
-    //display: flex;
-    // justify-content: space-between;
-    //max-width: 1570px;
-    margin: 0 auto;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    background-image: url("../../img/header/background.jpg");
+  //display: flex;
+  // justify-content: space-between;
+  //max-width: 1570px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  background-image: url("../../img/header/background.jpg");
 }
 .main__wrap {
-    max-width: 1370px;
-    margin: 0 auto;
+  max-width: 1370px;
+  margin: 0 auto;
 }
 
 .splide__slide img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 .carousel__img {
-    max-width: 700px;
+  max-width: 700px;
+}
+
+@media (max-width: 1200px) {
+  .main {
+    padding-bottom: 60px;
+    &__title {
+      font-size: 40px;
+      width: 600px;
+      &-sell {
+        font-size: 41px;
+
+        left: 66.5%;
+      }
+    }
+  }
+}
+
+@media (max-width: 963px) {
+  .main__title {
+    font-size: 36px;
+    width: 500px;
+    padding-top: 100px;
+    margin-bottom: 60px;
+    &-sell {
+      font-size: 34px;
+      left: 57.5%;
+    }
+  }
 }

@@ -76,3 +76,67 @@
       contrast(119%);
   }
 }
+
+@media (max-width: 1310px) {
+  .contacts > div > img {
+    margin-right: 50px;
+    max-width: 335px;
+  }
+}
+
+@media (max-width: 1110px) {
+  // .contacts > div > img {
+  //   margin-right: 50px;
+  //   max-width: 335px;
+  // }
+  .contacts__container {
+    padding: 80px 0;
+    padding-left: 50px;
+  }
+  .contacts__title {
+    padding-bottom: 30px;
+    font-size: 35px;
+    width: 360px;
+    margin: 0 auto;
+  }
+  .contacts__text {
+    width: 440px;
+    font-size: 20px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+  }
+  .contacts__wrap {
+    width: 322px;
+    margin: 0 auto;
+    & > a {
+      font-size: 32px;
+    }
+  }
+}
+
+@media (max-width: 840px) {
+  .contacts > div > img {
+    display: none;
+  }
+  .contacts {
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: relative;
+
+    background-image: url("../../img/footer/contacts-coffee.jpg");
+    &__container {
+      background: rgba(0, 0, 0, 0.096);
+      overflow: hidden;
+      height: 100%;
+      padding-left: 0;
+    }
+  }
+}
+
+@media (max-width: 473px) {
+  .contacts__text {
+    max-width: 360px;
+  }
+}

@@ -32,3 +32,10 @@ footer {
   filter: invert(100%) sepia(0) saturate(0%) hue-rotate(0) brightness(1180)
     contrast(119%);
 }
+
+@media (max-width: 670px) {
+  .footer__list {
+    padding: 0 20px;
+    font-size: 18px;
+  }
+}

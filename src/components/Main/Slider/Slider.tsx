@@ -27,6 +27,8 @@ export const Slider = () => {
       });
     setHotCoffee(response);
   };
+  let hotCoffees = hotCoffee.map(h => h.id)
+  console.log(...hotCoffees)
   useEffect(() => {
     getIcedCoffee();
   }, []);
@@ -44,14 +46,17 @@ export const Slider = () => {
         }}
         onSlideChange={() => console.log("slide change")}
         centeredSlides={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 2500,
+        //   disableOnInteraction: false,
+        // }}
       >
         <div>
-          {hotCoffee.map(({ title, image, description, id }) => (
-            <SwiperSlide key={id}>
+          { ( hotCoffee.map(({ title, image, description, id }) => (
+           <>
+            {
+              id< 12?(
+               <SwiperSlide key={id}>
               <div className="slider">
                 <img
                   className="slider__img"
@@ -62,15 +67,17 @@ export const Slider = () => {
                 />
                 <div className="details">
                   <h3 className="coffee__list-title">{title}</h3>
-                  <p className="slider__text">{description}</p>
-                  <p>Price: 3$</p>
+                  <p className="slider__text">{description.slice(0, 100) + "..."}</p>
+                  <p className="slider__price">Price: 3$</p>
                   <NavLink to="/menu" className="slider__link">
                     LEARN MORE...
                   </NavLink>
                 </div>
               </div>
             </SwiperSlide>
-          ))}
+            ) : null}
+           </>
+          ))) }
         </div>
       </Swiper>
     </>
@@ -79,3 +86,5 @@ export const Slider = () => {
 <NavLink to="/menu" className="main__text-link">
   LEARN MORE...
 </NavLink>;
+
+
