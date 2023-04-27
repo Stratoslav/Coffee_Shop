@@ -58,4 +58,16 @@
   .restaurant__link {
     font-size: 14px;
   }
+  .modal__restaurant {
+    transform: translate(60px, 12px);
+  }
+  //   .modal__city {
+  //     transform: translate(70px, 10px);
+  //   }
+  .modal__city::before {
+    left: 6px;
+  }
+}
+
+@media (max-width: 360px) {
 }

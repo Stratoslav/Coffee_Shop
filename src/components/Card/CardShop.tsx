@@ -23,7 +23,7 @@ const CardShop = () => {
             <p className="cardShop__text">{description}</p>
             <p className="cardShop__price">30 $</p>
           </div>
-          <div>
+          <div className="form__cardShop">
             <label htmlFor="input-number-mod">
               Modified Spin-Buttons (just Chrome)
             </label>

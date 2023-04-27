@@ -49,3 +49,17 @@
     }
   }
 }
+
+@media (max-width: 500px) {
+  .main__container {
+    // background-position: center;
+    // background-size: cover;
+    background-repeat: no-repeat;
+    // position: relative;
+    background-size: cover;
+    background-image: url("https://media.wired.com/photos/628832c2767cd598dfa6bbad/1:1/w_1800,h_1800,c_limit/5-Myths-Misconceptions-About-Coffee-Gear-1125088778.jpg");
+  }
+  //   .q {
+  //     opacity: 0.5;
+  //   }
+}

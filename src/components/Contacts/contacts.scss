@@ -140,3 +140,9 @@
     max-width: 360px;
   }
 }
+
+@media (max-width: 410px) {
+  .contacts__item::before {
+    left: 105px;
+  }
+}
