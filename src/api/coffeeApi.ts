@@ -1,16 +1,21 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
+  // const getData = async() => {
+  //   const res = await axios.get('http://localhost:5000/api/coffee');
+  //   setArr(res.data);
+  // }
 export const coffeeApi = createApi({
   reducerPath: "coffeeApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://api.sampleapis.com/coffee/" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/api/" }),
   endpoints: (build) => ({
-    getIcedCoffee: build.query({
-      query: () => "iced",
-    }),
-    getHotCoff: build.query({
-      query: () => "hot",
+    // getIcedCoffee: build.query({
+    //   query: () => "iced",
+    // }),
+    getHotCoff: build.query<any, void>({
+      query: () => "coffee",
     }),
   }),
 });
 
-export const { useGetIcedCoffeeQuery, useGetHotCoffQuery } = coffeeApi;
+export const {useGetHotCoffQuery} = coffeeApi
+// export const { /*useGetIcedCoffeeQuery*/ useGetHotCoffQuery } = coffeeApi;

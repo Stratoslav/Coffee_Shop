@@ -3,13 +3,13 @@ import React from "react";
 
 import { NavLink } from "react-router-dom";
 
-import { useGetHotCoffQuery, useGetIcedCoffeeQuery } from "../../api/coffeeApi";
+import { useGetHotCoffQuery } from "../../api/coffeeApi";
 
 import { Card } from "../Card/Card";
 import "./menu.scss";
 
 export const MenuComponent = ({ changeTypeOfCoffee, isHotCoffee }) => {
-  const info = useGetIcedCoffeeQuery();
+  // const info = useGetIcedCoffeeQuery();
 
   let { data, isLoading } = useGetHotCoffQuery();
   if (data !== undefined) {
@@ -36,8 +36,19 @@ export const MenuComponent = ({ changeTypeOfCoffee, isHotCoffee }) => {
         <button className="toggle__button button" onClick={changeTypeOfCoffee}>
           See {isHotCoffee} coffees
         </button>
-
-        {isHotCoffee === "Iced" ? (
+        {isLoading ? (
+          <h1>Loading</h1>
+        ) : (
+          <>
+            <h1 className="coffee__title">Hot Coffee</h1>
+            <ul className="coffee__list">
+              {data.map((item) => (
+                <Card key={item.id} item={item} />
+              ))}
+            </ul>
+          </>
+        )}
+        {/* {isHotCoffee === "Iced" ? (
           isLoading ? (
             <h1>Loading</h1>
           ) : (
@@ -50,7 +61,8 @@ export const MenuComponent = ({ changeTypeOfCoffee, isHotCoffee }) => {
               </ul>
             </>
           )
-        ) : info.isLoading ? (
+        ) :
+          info.isLoading ? (
           <h1>Loading</h1>
         ) : (
           <>
@@ -61,7 +73,7 @@ export const MenuComponent = ({ changeTypeOfCoffee, isHotCoffee }) => {
               ))}
             </ul>
           </>
-        )}
+        )} */}
       </section>
     </>
   );

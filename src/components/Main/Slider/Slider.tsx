@@ -10,28 +10,37 @@ import "./slider.scss";
 import "swiper/css/pagination";
 import "../../Header/header.scss";
 import { NavLink } from "react-router-dom";
+import { useGetHotCoffQuery } from "../../../api/coffeeApi";
 interface Coffee {
-  title: string;
+  coffee_name: string;
   description: string;
   ingredients?: string[];
   image: string;
   id: number;
 }
 export const Slider = () => {
+    let { data, isLoading } = useGetHotCoffQuery();
+
   let [hotCoffee, setHotCoffee] = useState<Coffee[]>([]);
-  const getIcedCoffee = async () => {
-    const response = await axios
-      .get(`https://api.sampleapis.com/coffee/hot`)
-      .then((res) => {
-        return res.data;
-      });
-    setHotCoffee(response);
-  };
-  let hotCoffees = hotCoffee.map(h => h.id)
-  console.log(...hotCoffees)
+  // const getIcedCoffee = async () => {
+  //   const response = await axios
+  //     .get(`http://localhost:5000/coffee`)
+  //     .then((res) => {
+  //       return res.data;
+  //     });
+  //   setHotCoffee(response);
+  // };
+  // let hotCoffees = hotCoffee.map(h => h.id)
+
   useEffect(() => {
-    getIcedCoffee();
-  }, []);
+    if (isLoading) {
+        setHotCoffee(data)
+    }
+  
+    // getIcedCoffee();
+   
+  }, [data, isLoading]);
+
   return (
     <>
       <Swiper
@@ -52,30 +61,30 @@ export const Slider = () => {
         // }}
       >
         <div>
-          { ( hotCoffee.map(({ title, image, description, id }) => (
+          { (data?.length > 0&&  data.map(({ coffee_name, image, description, id , price}) => (
            <>
-            {
-              id< 12?(
+            
+              
                <SwiperSlide key={id}>
               <div className="slider">
-                <img
-                  className="slider__img"
-                  width={300}
-                  height={270}
-                  src={image}
-                  alt={title}
+                  <img
+                    className="slider__img"
+                    width={300}
+                    height={270}
+                    src={`http://localhost:5000/${image}`}
+                  alt={coffee_name}
                 />
                 <div className="details">
-                  <h3 className="coffee__list-title">{title}</h3>
+                  <h3 className="coffee__list-title">{coffee_name}</h3>
                   <p className="slider__text">{description.slice(0, 100) + "..."}</p>
-                  <p className="slider__price">Price: 3$</p>
+                    <p className="slider__price">Price: { price} UAN</p>
                   <NavLink to="/menu" className="slider__link">
                     LEARN MORE...
                   </NavLink>
                 </div>
               </div>
             </SwiperSlide>
-            ) : null}
+            
            </>
           ))) }
         </div>

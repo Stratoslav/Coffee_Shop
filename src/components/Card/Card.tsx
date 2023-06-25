@@ -7,7 +7,7 @@ type Item = {
 }
 export const Card = ({ item }: Item) => {
   const [click, setClick] = useState(false);
-  const { id, image, title, description } = item;
+  const { id, image, coffee_name, description, ingredients, price, count } = item;
 
  console.log(item.id < 20)
   const dispatch = useDispatch();
@@ -16,25 +16,27 @@ export const Card = ({ item }: Item) => {
     dispatch(CardShopAction.handleClickCard(item));
     setClick(true);
   }
+  console.log(`http://localhost:5000/${ image }`)
   return (
   <>
-    { item.id < 20 ? (<li className="coffee__list-item cards" key={id}>
+    {<li className="coffee__list-item cards" key={id}>
       <div className="image__box">
         <img
-          height={300}
-          className="coffee__list-img"
-          src={image}
-          alt={title}
+            height={300}
+            width={'auto'}
+            className="coffee__list-img" 
+          src={`http://localhost:5000/${image}`}
+            alt={coffee_name}
         />
       </div>
 
       <div className="details">
-        <h3 className="coffee__list-title">{title}</h3>
+        <h3 className="coffee__list-title">{coffee_name}</h3>
         <p className="coffee__list-text">{description}</p>
-        <p>ingredient:</p>
-       
+        <p ><strong>ingredient</strong></p>
+          <div>{ingredients}</div>
 
-        <p className="coffee__list-price">30 $</p>
+          <p className="coffee__list-price">price: {price} UAN</p>
         <button
           disabled={click}
           className="coffee__list-button"
@@ -44,7 +46,7 @@ export const Card = ({ item }: Item) => {
           Add to Cart
         </button>
       </div>
-      </li>) : null}
+      </li>}
       </>
   );
 };

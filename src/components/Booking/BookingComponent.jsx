@@ -15,7 +15,7 @@ export const BookingComponent = ({ isErrorClass, isError, formik }) => {
             <div className="booking__form-wrap">
               {" "}
               <label className="booking__form-label" htmlFor="name">
-                Your full name
+                Your name
               </label>
               <br />
               <input
