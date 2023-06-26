@@ -138,17 +138,17 @@ const navMenu = document.querySelector('.nav-menu')
         <nav className={"header__inner-right"}>
           <div
             className="nav_box"
-            onClick={() =>
-              dispatch(navigationAction.handleShowComponent(false))
+            onClick={() =>{
+      cart.length > 0 ? dispatch(navigationAction.handleShowComponent(false)) : dispatch(navigationAction.handleShowComponent(true))}
             }
           >
-            <NavLink to="/menu">
+         { <NavLink to="/menu">
               <div className="card">
                 <span></span>
 
                 <span>{cart.length}</span>
               </div>
-            </NavLink>
+            </NavLink>}
           </div>
             <ul className="nav-menu">
             <li className="nav-item">

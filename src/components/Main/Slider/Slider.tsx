@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, EffectFade, Autoplay, Pagination } from "swiper";
-import axios from "axios";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/scss/effect-fade";
@@ -11,17 +11,17 @@ import "swiper/css/pagination";
 import "../../Header/header.scss";
 import { NavLink } from "react-router-dom";
 import { useGetHotCoffQuery } from "../../../api/coffeeApi";
-interface Coffee {
-  coffee_name: string;
-  description: string;
-  ingredients?: string[];
-  image: string;
-  id: number;
-}
+// interface Coffee {
+//   coffee_name: string;
+//   description: string;
+//   ingredients?: string[];
+//   image: string;
+//   id: number;
+// }
 export const Slider = () => {
-    let { data, isLoading } = useGetHotCoffQuery();
+    let { data } = useGetHotCoffQuery();
 
-  let [hotCoffee, setHotCoffee] = useState<Coffee[]>([]);
+  // let [hotCoffee, setHotCoffee] = useState<Coffee[]>([]);
   // const getIcedCoffee = async () => {
   //   const response = await axios
   //     .get(`http://localhost:5000/coffee`)
@@ -32,14 +32,14 @@ export const Slider = () => {
   // };
   // let hotCoffees = hotCoffee.map(h => h.id)
 
-  useEffect(() => {
-    if (isLoading) {
-        setHotCoffee(data)
-    }
+  // useEffect(() => {
+  //   if (isLoading) {
+  //       setHotCoffee(data)
+  //   }
   
     // getIcedCoffee();
    
-  }, [data, isLoading]);
+  // }, [data, isLoading]);
 
   return (
     <>

@@ -4,7 +4,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import { Header } from "./components/Header/Header";
 import MainComponent from "./components/Main/Main";
 
-import {  lazy, Suspense, useEffect, useState } from "react";
+import {  lazy, Suspense } from "react";
 
 import { Booking } from "./components/Booking/Booking";
 import { Blog } from "./components/Blog/Blog";
@@ -13,7 +13,7 @@ import { Blog } from "./components/Blog/Blog";
 
 import { NotFound } from "./components/NotFound/NotFound";
 import { useAppSelector } from "./redux/hooks";
-import axios from "axios";
+
 
 const CardShop = lazy(() => import("./components/Card/CardShop"));
 const Menu = lazy(() => import("./components/Menu/Menu"));

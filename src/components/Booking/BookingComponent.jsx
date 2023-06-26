@@ -1,6 +1,10 @@
 import React from "react";
 import "../Booking/booking.scss";
+import { useAppDispatch } from "../../redux/hooks";
+import { CardShopAction } from "../../redux/slice/sliceCardShop";
 export const BookingComponent = ({ isErrorClass, isError, formik }) => {
+  const dispatch = useAppDispatch();
+
   const { values, handleChange, isSubmitting, handleBlur, handleSubmit } =
     formik;
   return (
@@ -8,7 +12,7 @@ export const BookingComponent = ({ isErrorClass, isError, formik }) => {
       <div className="booking__container">
         <h3 className="booking__title">BOOK NOW</h3>
         <p className="booking__text">
-          Book Your Table Now And Have A Great Meal !
+          Book Your Table Now And Have A Great Coffee !
         </p>
         <form onSubmit={handleSubmit} className="booking__form">
           <div>
@@ -22,13 +26,12 @@ export const BookingComponent = ({ isErrorClass, isError, formik }) => {
                 onChange={handleChange}
                 value={values.name}
                 onBlur={handleBlur}
-                className={isErrorClass("name")}
+                className={"booking__form-input"}
                 type="name"
                 id="name"
                 name="name"
-                placeholder="Write your name here"
+                placeholder="Write your name here (not require)"
               />
-              <div>{isError("name")}</div>
               <br />
               <label className="booking__form-label" htmlFor="address">
                 Your address?
@@ -75,10 +78,9 @@ export const BookingComponent = ({ isErrorClass, isError, formik }) => {
                 type="email"
                 id="email"
                 name="email"
-                placeholder="Write your email here"
-                className={isErrorClass("email")}
+                placeholder="Write your email here (not require)"
+                className={"booking__form-input"}
               />
-              <div>{isError("email")}</div>
 
               <br />
               <label className="booking__form-label" htmlFor="time">
@@ -115,6 +117,7 @@ export const BookingComponent = ({ isErrorClass, isError, formik }) => {
           </div>
 
           <button
+            onClick={() => dispatch(CardShopAction.handleRemoveAllCard())}
             disabled={isSubmitting}
             className="booking__form-button"
             type="submit"

@@ -2,8 +2,10 @@ import React from "react";
 import { BookingComponent } from "./BookingComponent";
 import { useFormik } from "formik";
 import basicSchema from "../schemas/schemas";
+import { useAppSelector } from "../../redux/hooks";
 
 export const Booking = () => {
+  const { price, order } = useAppSelector((s) => s.cardShopReducer);
   const onSubmit = async (values, action) => {
     console.log(values);
     await new Promise((res) => setTimeout(res, 1000));
@@ -17,6 +19,9 @@ export const Booking = () => {
       date: "",
       time: "",
       phone: "",
+      order: order,
+      price: price,
+      drinks: "",
     },
     validationSchema: basicSchema,
     onSubmit,

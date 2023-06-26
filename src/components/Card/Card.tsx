@@ -7,7 +7,7 @@ type Item = {
 }
 export const Card = ({ item }: Item) => {
   const [click, setClick] = useState(false);
-  const { id, image, coffee_name, description, ingredients, price, count } = item;
+  const { id, image, coffee_name, description, ingredients, price } = item;
 
  console.log(item.id < 20)
   const dispatch = useDispatch();
