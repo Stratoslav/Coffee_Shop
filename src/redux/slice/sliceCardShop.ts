@@ -21,13 +21,14 @@ type CardShopTypes = {
   price: number,
   totalCountArray: number[],
   order: any[],
+  totalNumArray: number[]
   // orders: any[]
 }
   type OrderInput = {
   name: string;
   count: number;
 };
-const initialState = { count: 1, card: cartArr, price: 0 , totalCountArray: [], order: []};
+const initialState = { count: 1, card: cartArr, price: 0 , totalCountArray: [], order: [], countOfCoffee: 0, totalNumArray: []};
 
 const cardShopSlice = createSlice({
   name: "cardShop",
@@ -43,10 +44,7 @@ const cardShopSlice = createSlice({
     },
     handleClickCard(state, action: PayloadAction<CardTypes>) {
       state.card.push(action.payload);
-    
-      //   if (state.card.length > 17) {
-      //   state.card.pop()
-      // }
+  
       localStorage.setItem("cartArr", JSON.stringify(state.card));
     },
     handleRemoveCard(state, action: PayloadAction<CardTypes['id']>) {
@@ -57,17 +55,17 @@ const cardShopSlice = createSlice({
       state.card = [];
       state.price = 0
     },
-    handleTotalCount(state, action: PayloadAction<Omit<CardShopTypes, 'card' | 'totalCountArray' | 'order'>>) {
-    
+    handleTotalCount(state, action: PayloadAction<Omit<CardShopTypes, 'card' | 'totalCountArray' | 'order' | 'countOfCoffee' | 'totalNumArray'>>) {
+  
       state.totalCountArray.push(action.payload.price)
-     
+
+      
       let sum = 0;
       for (let i = 0; i < state.totalCountArray.length; i++) {
-        console.log(state.totalCountArray[i])
+        console.log(state.order)
         sum += state.totalCountArray[i];
+        state.price = sum;
       }
-      state.price = sum;
-    
     },
     getInformationAboutOrder: (state, action: PayloadAction<OrderInput[]>) => {
       const newOrders = action.payload;

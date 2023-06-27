@@ -94,7 +94,7 @@
   border: 1px solid #ff0000;
   background-color: inherit;
   height: 55px;
-  width: 300px;
+  width: 415px;
   color: #fff;
   font-size: 19px;
   font-weight: 100;
@@ -127,6 +127,9 @@ button::disabled {
   }
   .booking__form > div {
     justify-content: space-around;
+  }
+  .input__error {
+    width: 300px;
   }
 }
 

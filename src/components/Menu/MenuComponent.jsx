@@ -42,9 +42,14 @@ export const MenuComponent = ({ changeTypeOfCoffee, isHotCoffee }) => {
           <>
             <h1 className="coffee__title">Hot Coffee</h1>
             <ul className="coffee__list">
-              {data.map((item) => (
-                <Card key={item.id} item={item} />
-              ))}
+              {data.length > 0 && data !== undefined ? (
+                data.map((item) => <Card key={item.id} item={item} />)
+              ) : (
+                <div>
+                  Sorry, but you can't see the slider and other information
+                  because the server is running on the local machine :(
+                </div>
+              )}
             </ul>
           </>
         )}

@@ -21,25 +21,6 @@ import { useGetHotCoffQuery } from "../../../api/coffeeApi";
 export const Slider = () => {
     let { data } = useGetHotCoffQuery();
 
-  // let [hotCoffee, setHotCoffee] = useState<Coffee[]>([]);
-  // const getIcedCoffee = async () => {
-  //   const response = await axios
-  //     .get(`http://localhost:5000/coffee`)
-  //     .then((res) => {
-  //       return res.data;
-  //     });
-  //   setHotCoffee(response);
-  // };
-  // let hotCoffees = hotCoffee.map(h => h.id)
-
-  // useEffect(() => {
-  //   if (isLoading) {
-  //       setHotCoffee(data)
-  //   }
-  
-    // getIcedCoffee();
-   
-  // }, [data, isLoading]);
 
   return (
     <>
@@ -61,7 +42,7 @@ export const Slider = () => {
         // }}
       >
         <div>
-          { (data?.length > 0&&  data.map(({ coffee_name, image, description, id , price}) => (
+          { (data?.length > 0 && data !== undefined ?  (data.map(({ coffee_name, image, description, id , price}) => (
            <>
             
               
@@ -86,7 +67,8 @@ export const Slider = () => {
             </SwiperSlide>
             
            </>
-          ))) }
+          ))) : (<div>
+Sorry, but you can't see the slider and other information because the server is running on the local machine :(</div>)) }
         </div>
       </Swiper>
     </>

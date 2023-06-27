@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { useAppSelector } from "../../redux/hooks";
@@ -7,10 +7,10 @@ import { CardShopAction } from "../../redux/slice/sliceCardShop";
 import "../Card/cardShop.scss";
 const CardShop = () => {
   const dispatch = useDispatch();
-
+const [count, setCount] = useState(0)
   const {card, price} = useAppSelector((state) => state.cardShopReducer);
  
-
+// console.log(countOfCoffee)
  
   
   return (
@@ -28,7 +28,7 @@ const CardShop = () => {
             <label htmlFor="input-number-mod">
               Modified Spin-Buttons (just Chrome)
             </label>
-            {/* <input
+            <input
               id="input-number-mod"
               className="mod"
               type="number"
@@ -38,10 +38,11 @@ const CardShop = () => {
               }}
               min="1"
               step={1}
-            /> */}
-            <button  className="cardShop__button">+</button>
-            <span>{count}</span>
-            <button  className="cardShop__button">-</button>
+                           
+            />
+          
+          
+         
             <button
               className="cardShop__button"
               onClick={() => dispatch(CardShopAction.handleRemoveCard(id))}
