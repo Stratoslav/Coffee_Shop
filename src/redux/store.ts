@@ -4,7 +4,8 @@ import { cardShopReducer } from "./slice/sliceCardShop";
 import { popUpReducer } from "./slice/slicePopUp";
 import { navigationReducer } from "./slice/sliceNavigation";
 import { contactReducer } from "./slice/sliceContacts";
-import { coffeeApi } from "../api/coffeeApi";
+import {bookingReducer} from './slice/sliceBooking'
+import { coffeeApi, coffeeOrderApi } from "../api/coffeeApi";
 export const store = configureStore({
   reducer: {
     blogReducer,
@@ -12,10 +13,14 @@ export const store = configureStore({
     popUpReducer,
     navigationReducer,
     contactReducer,
+    bookingReducer,
     [coffeeApi.reducerPath]: coffeeApi.reducer,
+    [coffeeOrderApi.reducerPath]: coffeeOrderApi.reducer
   },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(coffeeApi.middleware),
+  middleware: (getDefaultMiddleware) => 
+    getDefaultMiddleware().concat(coffeeApi.middleware, coffeeOrderApi.middleware),
+
+
 });
 
 export type RootState = ReturnType<typeof store.getState>

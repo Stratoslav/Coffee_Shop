@@ -30,7 +30,7 @@ const [count, setCount] = useState(0)
             </label>
             <input
               id="input-number-mod"
-              className="mod"
+              className="mod input_card"
               type="number"
               onClick={(e) => {
                 dispatch(CardShopAction.handleTotalCount({ count: +e.currentTarget.value, price }))

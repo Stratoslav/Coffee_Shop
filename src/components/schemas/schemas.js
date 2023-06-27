@@ -1,8 +1,8 @@
 import * as yup from "yup";
 
 const basicSchema = yup.object().shape({
-  email: yup.string().email("Please enter a valid email").required(),
-  name: yup.string().required("Required"),
+  email: yup.string().email("Please enter a valid email"),
+  name: yup.string(),
   time: yup.string().required("Required"),
   phone: yup.string().required("Required"),
   date: yup

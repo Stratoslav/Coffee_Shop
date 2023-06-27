@@ -132,7 +132,9 @@ button::disabled {
     width: 300px;
   }
 }
-
+.disabled {
+  pointer-events: none;
+}
 @media (max-width: 946px) {
   .booking__title {
     margin-bottom: 40px;

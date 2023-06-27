@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { BookingComponent } from "./BookingComponent";
 import { useFormik } from "formik";
 import basicSchema from "../schemas/schemas";
-import { useAppSelector } from "../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { usePostOrderMutation } from "../../api/coffeeApi";
+import PopUpBookingOrder from "./PopUpBookingOrder";
+import { bookingAction } from "../../redux/slice/sliceBooking";
 
 export const Booking = () => {
+  const [postOrder, { isLoading, isError: isErrorOrder }] =
+    usePostOrderMutation();
   const { price, order } = useAppSelector((s) => s.cardShopReducer);
+  const dispatch = useAppDispatch();
+
   const onSubmit = async (values, action) => {
+    postOrder(values);
+    dispatch(bookingAction.getOrderMenu(values));
     console.log(values);
+    if (isErrorOrder) {
+      console.log("isErrorOrder", isErrorOrder);
+    }
+
     await new Promise((res) => setTimeout(res, 1000));
     action.resetForm();
   };
@@ -26,6 +39,7 @@ export const Booking = () => {
     validationSchema: basicSchema,
     onSubmit,
   });
+
   const isError = (field) => {
     return formik.errors[field] && formik.touched[field] ? (
       <p className="errors__text">{formik.errors[field]}</p>
