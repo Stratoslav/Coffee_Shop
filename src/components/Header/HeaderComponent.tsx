@@ -142,7 +142,7 @@ const navMenu = document.querySelector('.nav-menu')
       cart.length > 0 ? dispatch(navigationAction.handleShowComponent(false)) : dispatch(navigationAction.handleShowComponent(true))}
             }
           >
-         { <NavLink to="/menu">
+         { <NavLink to="/shop">
               <div className="card">
                 <span></span>
 

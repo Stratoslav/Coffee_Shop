@@ -1,15 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { BookingComponent } from "./BookingComponent";
 import { useFormik } from "formik";
 import basicSchema from "../schemas/schemas";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { usePostOrderMutation } from "../../api/coffeeApi";
-import PopUpBookingOrder from "./PopUpBookingOrder";
 import { bookingAction } from "../../redux/slice/sliceBooking";
 
 export const Booking = () => {
-  const [postOrder, { isLoading, isError: isErrorOrder }] =
-    usePostOrderMutation();
+  const [postOrder, { isError: isErrorOrder }] = usePostOrderMutation();
   const { price, order } = useAppSelector((s) => s.cardShopReducer);
   const dispatch = useAppDispatch();
 

@@ -11,13 +11,7 @@ import "swiper/css/pagination";
 import "../../Header/header.scss";
 import { NavLink } from "react-router-dom";
 import { useGetHotCoffQuery } from "../../../api/coffeeApi";
-// interface Coffee {
-//   coffee_name: string;
-//   description: string;
-//   ingredients?: string[];
-//   image: string;
-//   id: number;
-// }
+
 export const Slider = () => {
     let { data } = useGetHotCoffQuery();
 
@@ -36,10 +30,7 @@ export const Slider = () => {
         }}
         onSlideChange={() => console.log("slide change")}
         centeredSlides={true}
-        // autoplay={{
-        //   delay: 2500,
-        //   disableOnInteraction: false,
-        // }}
+ 
       >
         <div>
           { (data?.length > 0 && data !== undefined ?  (data.map(({ coffee_name, image, description, id , price}) => (

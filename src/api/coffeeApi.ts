@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { query } from "express";
+
 
 
 export const coffeeApi = createApi({
@@ -27,4 +27,3 @@ export const coffeeOrderApi = createApi({
 })
 export const { useGetHotCoffQuery } = coffeeApi
 export const {usePostOrderMutation} = coffeeOrderApi
-// export const { /*useGetIcedCoffeeQuery*/ useGetHotCoffQuery } = coffeeApi;

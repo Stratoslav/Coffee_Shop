@@ -13,9 +13,8 @@ export const BookingComponent = ({ isErrorClass, isError, formik, data }) => {
     formik;
   return (
     <>
-      {isShowOrder ? <PopUpBookingOrder /> : null}
-
       <section className={"booking"} id="booking">
+        {isShowOrder ? <PopUpBookingOrder /> : null}
         <div
           className={
             isShowOrder ? "booking__container disabled " : "booking__container"

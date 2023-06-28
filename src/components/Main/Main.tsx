@@ -3,8 +3,7 @@ import "../Header/header.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 import { About } from "../About/About";
-// import { Action } from "../Action/Action";
-// import { GalleryComponent } from "../Gallery/GalleryComponent";
+
 import { Booking } from "../Booking/Booking";
 import { Contacts } from "../Contacts/Contacts";
 import { Slider } from "./Slider/Slider";
@@ -31,8 +30,7 @@ const MainComponent = () => {
         </section>
          </div>
       <About />
-      {/* <Action /> */}
-       {/* <GalleryComponent /> */}
+
       <Booking />
       <Contacts />
     </>

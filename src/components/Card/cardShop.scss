@@ -13,6 +13,7 @@
   &__data {
     width: 40%;
   }
+
   &__button {
     width: auto;
     min-width: 40px;
@@ -59,6 +60,21 @@ label {
   border: 1px solid #bbb;
   border-color: #bbb #ececec #ececec #bbb;
   padding: 0.2rem;
+}
+.warning_cardShop {
+  text-align: center;
+  padding-top: 200px;
+  height: 128vh;
+  font-size: 22px;
+  &-title {
+    margin-bottom: 20px;
+  }
+  &-link {
+    border-radius: 4px;
+    color: black;
+    border: 1px solid;
+    padding: 5px;
+  }
 }
 
 /* Spin Buttons modified */
